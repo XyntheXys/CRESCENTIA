@@ -224,6 +224,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
+  attackDuration: 0.1
 --- !u!95 &1835818813412945604
 Animator:
   serializedVersion: 7
@@ -259,3 +260,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   jumping: 0
+  attacking: 0

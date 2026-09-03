@@ -19,7 +19,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float groundCheckX = 0.5f;
     [SerializeField] private LayerMask whatIsGround;
 
-    //[Header("Attack")]
+    [Header("Attack")]
+    private bool attackInput;
+    [SerializeField] private float attackDuration = 1f;
+    private float timeSinceLastAttack = 0f;
 
 
     PlayerStateList pState;
@@ -57,11 +60,13 @@ public class PlayerController : MonoBehaviour
         Flip();
         Move();
         Jump();
+        Attack();
     }
 
     void GetInputs() 
     {
         xAxis = Input.GetAxisRaw("Horizontal");
+        attackInput = Input.GetButtonDown("Fire1");
     }
 
     void Flip()
@@ -94,6 +99,22 @@ public class PlayerController : MonoBehaviour
         {
             return false;
         }
+    }
+
+    void Attack()
+    {
+        if (attackInput && timeSinceLastAttack >= attackDuration)
+        {
+            pState.attacking = true;
+            timeSinceLastAttack = 0f;
+            anim.SetTrigger("Attacking");
+            Debug.Log("Attack initiated");
+        }
+        else
+        {
+            pState.attacking = false;
+        }
+        timeSinceLastAttack += Time.deltaTime;
     }
 
     void Jump()
