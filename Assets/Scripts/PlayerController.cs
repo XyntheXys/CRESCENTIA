@@ -19,6 +19,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float groundCheckX = 0.5f;
     [SerializeField] private LayerMask whatIsGround;
 
+    //[Header("Attack")]
+
+
     PlayerStateList pState;
     private Rigidbody2D rb;
     private float xAxis;
