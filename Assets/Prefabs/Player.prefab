@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 7666350508040508988}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -213,6 +213,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ce02fc6663dbfb48ac21c7b59669b6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  realHp: 10
+  rallyHp: 10
+  maxHealth: 10
   walkSpeed: 10
   jumpForce: 12
   jumpBufferFrames: 8
@@ -224,7 +227,17 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
+  attackDamage: 1
   attackDuration: 0.1
+  AtkOffset: {x: 1.33, y: 0.94, z: -1.95}
+  SideAtkRange: {x: 1.11, y: 1.68}
+  UpAtkRange: {x: 1.38, y: 1.57}
+  DownAtkRange: {x: 1.33, y: 1.38}
+  atkLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  rallySettings: {x: 3, y: 0.01, z: 0.1}
+  hpRegainStep: 0.2
 --- !u!95 &1835818813412945604
 Animator:
   serializedVersion: 7
