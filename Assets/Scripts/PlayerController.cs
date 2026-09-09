@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float attackDuration = 1f;
     private bool attackInput;
     private float timeSinceLastAttack = 0f;
-    [SerializeField] private Vector3 AtkOffset;
+    [SerializeField] [Tooltip("X:\tSide Attack Offset\nY:\tUp Attack Offset\nZ:\tDown Attack Offset")] private Vector3 AtkOffset;
     [SerializeField] private Vector2 SideAtkRange, UpAtkRange, DownAtkRange;
     [SerializeField] private LayerMask atkLayer;
     private Vector3 SideAtkCenter => transform.position + new Vector3(transform.localScale.x * AtkOffset.x, -0.5f, 0);
