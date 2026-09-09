@@ -1755,7 +1755,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75eb91fb3c38f274a8795b00670d101b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  health: 20
+  health: 10
+  isImmortal: 1
 --- !u!1 &1378010245
 GameObject:
   m_ObjectHideFlags: 0

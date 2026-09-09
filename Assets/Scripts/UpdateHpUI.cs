@@ -11,7 +11,7 @@ public class UpdateHpUI : MonoBehaviour
     void Start()
     {
         if (player == null) return;
-        UpdateBars(player.Health, player.RallyHealth, player.MaxHealth);
+        UpdateBars(player.RealHp, player.RallyHp, player.MaxHp);
     }
 
     private void OnEnable() { if (player) player.OnHealthChanged += UpdateBars; }

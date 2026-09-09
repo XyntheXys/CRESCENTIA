@@ -3,6 +3,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private float health = 10f;
+    [SerializeField] private bool isImmortal = false; // Set to true if the enemy should not take damage
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -21,7 +22,7 @@ public class Enemy : MonoBehaviour
         if (health <= 0) return;
         //Debug.Log($"Enemy took {damage} damage! Remain: {health - damage} at {System.DateTime.Now.ToString()}");
         health -= damage;
-        if (health <= 0)
+        if (health <= 0 && !isImmortal)
         {
             Die();
         }

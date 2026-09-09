@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     [Header("Player State")]
     [SerializeField] private float realHp = 10f;
     [SerializeField] private float rallyHp = 10f;
-    [SerializeField] private float maxHealth = 10f;
+    [SerializeField] private float maxHp = 10f;
 
     // Event signature: passes (currentHealth, currentRallyHealth, maxHealth)
     public event Action<float, float, float> OnHealthChanged;
@@ -30,16 +30,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask whatIsGround;
 
     [Header("Attack Settings")]
-    [SerializeField] private float attackDamage = 1f;
-    [SerializeField] private float attackDuration = 1f;
-    private bool attackInput;
-    private float timeSinceLastAttack = 0f;
-    [SerializeField] [Tooltip("X:\tSide Attack Offset\nY:\tUp Attack Offset\nZ:\tDown Attack Offset")] private Vector3 AtkOffset;
-    [SerializeField] private Vector2 SideAtkRange, UpAtkRange, DownAtkRange;
+    [SerializeField] private float atkDamage = 1f;
+    [SerializeField] private float atkDuration = 1f;
+    private bool atkInput;
+    private float timeSinceLastAtk = 0f;
+    [SerializeField] [Tooltip("X:\tSide Attack Offset\nY:\tUp Attack Offset\nZ:\tDown Attack Offset")] private Vector3 atkOffset;
+    [SerializeField] private Vector2 sideAtkRange, upAtkRange, downAtkRange;
     [SerializeField] private LayerMask atkLayer;
-    private Vector3 SideAtkCenter => transform.position + new Vector3(transform.localScale.x * AtkOffset.x, -0.5f, 0);
-    private Vector3 UpAtkCenter => transform.position + new Vector3(0, AtkOffset.y, 0);
-    private Vector3 DownAtkCenter => transform.position + new Vector3(0, AtkOffset.z, 0);
+
+    // Properties: PascalCase
+    private Vector3 SideAtkCenter => transform.position + new Vector3(transform.localScale.x * atkOffset.x, -0.5f, 0);
+    private Vector3 UpAtkCenter => transform.position + new Vector3(0, atkOffset.y, 0);
+    private Vector3 DownAtkCenter => transform.position + new Vector3(0, atkOffset.z, 0);
 
     [Header("Rally System")]
     [Tooltip("X:\tDelay before rally HP starts to decay\nY:\tAmount of HP to decay every time step\nZ:\tDecay HP every ... seconds")]
@@ -48,10 +50,10 @@ public class PlayerController : MonoBehaviour
     private Coroutine rallyCoroutine;
 
 
-    PlayerStateList pState;
+    private PlayerStateList pState;
     private Rigidbody2D rb;
     private float xAxis, yAxis;
-    Animator anim;
+    private Animator anim;
 
     public static PlayerController Instance;
 
@@ -90,7 +92,7 @@ public class PlayerController : MonoBehaviour
     {
         xAxis = Input.GetAxisRaw("Horizontal");
         yAxis = Input.GetAxisRaw("Vertical");
-        attackInput = Input.GetButtonDown("Fire1");
+        atkInput = Input.GetButtonDown("Fire1");
     }
 
     void Flip()
@@ -113,39 +115,32 @@ public class PlayerController : MonoBehaviour
 
     public bool Grounded()
     {
-        if(Physics2D.Raycast(groundCheckPoint.position, Vector2.down, groundCheckY, whatIsGround)
+        return Physics2D.Raycast(groundCheckPoint.position, Vector2.down, groundCheckY, whatIsGround)
             || Physics2D.Raycast(groundCheckPoint.position + new Vector3(groundCheckX, 0, 0), Vector2.down, groundCheckY, whatIsGround)
-            || Physics2D.Raycast(groundCheckPoint.position + new Vector3(-groundCheckX, 0, 0), Vector2.down, groundCheckY, whatIsGround))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+            || Physics2D.Raycast(groundCheckPoint.position + new Vector3(-groundCheckX, 0, 0), Vector2.down, groundCheckY, whatIsGround);
     }
 
     void Attack()
     {
-        if (attackInput && timeSinceLastAttack >= attackDuration)
+        if (atkInput && timeSinceLastAtk >= atkDuration)
         {
             pState.attacking = true;
-            timeSinceLastAttack = 0f;
+            timeSinceLastAtk = 0f;
             anim.SetTrigger("Attacking");
 
             if (yAxis == 0)
             {
-                Hit(SideAtkCenter, SideAtkRange);
+                Hit(SideAtkCenter, sideAtkRange);
                 DisplayAttackDebug(0);
             }
             else if (yAxis > 0)
             {
-                Hit(UpAtkCenter, UpAtkRange);
+                Hit(UpAtkCenter, upAtkRange);
                 DisplayAttackDebug(1);
             }
             else
             {
-                Hit(DownAtkCenter, DownAtkRange);
+                Hit(DownAtkCenter, downAtkRange);
                 DisplayAttackDebug(2);
             }
         }
@@ -153,7 +148,7 @@ public class PlayerController : MonoBehaviour
         {
             pState.attacking = false;
         }
-        timeSinceLastAttack += Time.deltaTime;
+        timeSinceLastAtk += Time.deltaTime;
     }
 
     private void OnDrawGizmosSelected()
@@ -165,15 +160,15 @@ public class PlayerController : MonoBehaviour
 
         // Side Attack
         Gizmos.DrawSphere(SideAtkCenter, 0.04f);            // Center
-        Gizmos.DrawWireCube(SideAtkCenter, SideAtkRange);   // Range
+        Gizmos.DrawWireCube(SideAtkCenter, sideAtkRange);   // Range
 
         // Up Attack
         Gizmos.DrawSphere(UpAtkCenter, 0.04f);              // Center
-        Gizmos.DrawWireCube(UpAtkCenter, UpAtkRange);       // Range
+        Gizmos.DrawWireCube(UpAtkCenter, upAtkRange);       // Range
 
         // Down Attack
         Gizmos.DrawSphere(DownAtkCenter, 0.04f);            // Center
-        Gizmos.DrawWireCube(DownAtkCenter, DownAtkRange);   // Range
+        Gizmos.DrawWireCube(DownAtkCenter, downAtkRange);   // Range
     }
 
     void Hit(Vector3 atkCenter, Vector3 atkRange)
@@ -181,9 +176,10 @@ public class PlayerController : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(atkCenter, atkRange, 0, atkLayer);
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<Enemy>()?.Enemyhit(attackDamage); // Adjust damage value as needed
+            enemy.GetComponent<Enemy>()?.Enemyhit(atkDamage); // Adjust damage value as needed
             float previousHp = realHp;
-            realHp = Mathf.Min(Mathf.Min(previousHp + hpRegainStep, rallyHp), maxHealth); // Regain HP when hitting an enemy
+            realHp = Mathf.Min(Mathf.Min(previousHp + hpRegainStep, rallyHp), maxHp); // Regain HP when hitting an enemy
+            if (Mathf.Abs(rallyHp-realHp) < 0.0001f && rallyCoroutine != null) StopRallyCoroutine(); // Stop rally countdown if realHp reaches rallyHp
             NotifyHealthChanged();
             Debug.Log($"Hit {enemy.name}! Regain {previousHp + hpRegainStep}, Rally {rallyHp}, Real {realHp}");
         }
@@ -194,12 +190,7 @@ public class PlayerController : MonoBehaviour
         // Implement damage logic here (e.g., reduce health, play hit animation, etc.)
         Debug.Log($"Player took {damage} damage! Remain: {realHp - damage} at {DateTime.Now.ToString()}");
         realHp -= damage;
-        if (rallyCoroutine != null)
-        {
-            StopCoroutine(rallyCoroutine);
-            rallyHp = realHp; // Reset rallyHp to realHp when taking damage
-            rallyCoroutine = null;
-        }
+        if (rallyCoroutine != null) StopRallyCoroutine();
         else rallyCoroutine = StartCoroutine(RallyHpCountdown());
         NotifyHealthChanged();
     }
@@ -218,7 +209,14 @@ public class PlayerController : MonoBehaviour
         NotifyHealthChanged();
     }
 
-    private void NotifyHealthChanged() => OnHealthChanged?.Invoke(realHp, rallyHp, maxHealth);
+    private void StopRallyCoroutine()
+    {
+        StopCoroutine(rallyCoroutine);
+        rallyHp = realHp; // Reset rallyHp to realHp when taking damage
+        rallyCoroutine = null;
+    }
+
+    private void NotifyHealthChanged() => OnHealthChanged?.Invoke(realHp, rallyHp, maxHp);
 
     void Jump()
     {
@@ -276,24 +274,24 @@ public class PlayerController : MonoBehaviour
             case 0:
                 float direction = transform.localScale.x > 0 ? 1 : -1;
                 Debug.Log($"Attack {(direction > 0 ? "Right" : "Left")}! {DateTime.Now.ToString()}");
-                Debug.DrawLine(SideAtkCenter + Vector3.up * SideAtkRange.y, SideAtkCenter + Vector3.right * SideAtkRange.x * direction, Color.red, attackDuration);
-                Debug.DrawLine(SideAtkCenter - Vector3.up * SideAtkRange.y, SideAtkCenter + Vector3.right * SideAtkRange.x * direction, Color.red, attackDuration);
+                Debug.DrawLine(SideAtkCenter + Vector3.up * sideAtkRange.y, SideAtkCenter + Vector3.right * sideAtkRange.x * direction, Color.red, atkDuration);
+                Debug.DrawLine(SideAtkCenter - Vector3.up * sideAtkRange.y, SideAtkCenter + Vector3.right * sideAtkRange.x * direction, Color.red, atkDuration);
                 break;
             case 1:
                 Debug.Log($"Attack Up! {DateTime.Now.ToString()}");
-                Debug.DrawLine(UpAtkCenter - Vector3.right * UpAtkRange.x, UpAtkCenter + Vector3.up * UpAtkRange.y, Color.red, attackDuration);
-                Debug.DrawLine(UpAtkCenter + Vector3.right * UpAtkRange.x, UpAtkCenter + Vector3.up * UpAtkRange.y, Color.red, attackDuration);
+                Debug.DrawLine(UpAtkCenter - Vector3.right * upAtkRange.x, UpAtkCenter + Vector3.up * upAtkRange.y, Color.red, atkDuration);
+                Debug.DrawLine(UpAtkCenter + Vector3.right * upAtkRange.x, UpAtkCenter + Vector3.up * upAtkRange.y, Color.red, atkDuration);
                 break;
             case 2:
                 Debug.Log($"Attack Down! {DateTime.Now.ToString()}");
-                Debug.DrawLine(DownAtkCenter - Vector3.right * DownAtkRange.x, DownAtkCenter - Vector3.up * DownAtkRange.y, Color.red, attackDuration);
-                Debug.DrawLine(DownAtkCenter + Vector3.right * DownAtkRange.x, DownAtkCenter - Vector3.up * DownAtkRange.y, Color.red, attackDuration);
+                Debug.DrawLine(DownAtkCenter - Vector3.right * downAtkRange.x, DownAtkCenter - Vector3.up * downAtkRange.y, Color.red, atkDuration);
+                Debug.DrawLine(DownAtkCenter + Vector3.right * downAtkRange.x, DownAtkCenter - Vector3.up * downAtkRange.y, Color.red, atkDuration);
                 break;
         }
     }
 
     // GETTERS & SETTERS
-    public float Health => realHp;
-    public float RallyHealth => rallyHp;
-    public float MaxHealth => maxHealth;
+    public float RealHp => realHp;
+    public float RallyHp => rallyHp;
+    public float MaxHp => maxHp;
 }
