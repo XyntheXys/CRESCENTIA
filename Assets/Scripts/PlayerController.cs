@@ -1,9 +1,19 @@
+using System;
+using System.Collections;
 using UnityEngine;
+using static UnityEngine.UI.Image;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Player State")]
+    [SerializeField] private float realHp = 10f;
+    [SerializeField] private float rallyHp = 10f;
+    [SerializeField] private float maxHp = 10f;
+
+    // Event signature: passes (currentHealth, currentRallyHealth, maxHealth)
+    public event Action<float, float, float> OnHealthChanged;
+
     [Header("Horizontal Movement Settings")]
-    
     [SerializeField] private float walkSpeed = 5;
     [SerializeField] private float jumpForce = 15;
     private int jumpBufferCounter;
@@ -19,16 +29,31 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float groundCheckX = 0.5f;
     [SerializeField] private LayerMask whatIsGround;
 
-    [Header("Attack")]
-    private bool attackInput;
-    [SerializeField] private float attackDuration = 1f;
-    private float timeSinceLastAttack = 0f;
+    [Header("Attack Settings")]
+    [SerializeField] private float atkDamage = 1f;
+    [SerializeField] private float atkDuration = 1f;
+    private bool atkInput;
+    private float timeSinceLastAtk = 0f;
+    [SerializeField] [Tooltip("X:\tSide Attack Offset\nY:\tUp Attack Offset\nZ:\tDown Attack Offset")] private Vector3 atkOffset;
+    [SerializeField] private Vector2 sideAtkRange, upAtkRange, downAtkRange;
+    [SerializeField] private LayerMask atkLayer;
+
+    // Properties: PascalCase
+    private Vector3 SideAtkCenter => transform.position + new Vector3(transform.localScale.x * atkOffset.x, -0.5f, 0);
+    private Vector3 UpAtkCenter => transform.position + new Vector3(0, atkOffset.y, 0);
+    private Vector3 DownAtkCenter => transform.position + new Vector3(0, atkOffset.z, 0);
+
+    [Header("Rally System")]
+    [Tooltip("X:\tDelay before rally HP starts to decay\nY:\tAmount of HP to decay every time step\nZ:\tDecay HP every ... seconds")]
+    [SerializeField] private Vector3 rallySettings;
+    [SerializeField] [Tooltip("Amount of HP to regain when player hit success")] private float hpRegainStep;
+    private Coroutine rallyCoroutine;
 
 
-    PlayerStateList pState;
+    private PlayerStateList pState;
     private Rigidbody2D rb;
-    private float xAxis;
-    Animator anim;
+    private float xAxis, yAxis;
+    private Animator anim;
 
     public static PlayerController Instance;
 
@@ -66,7 +91,8 @@ public class PlayerController : MonoBehaviour
     void GetInputs() 
     {
         xAxis = Input.GetAxisRaw("Horizontal");
-        attackInput = Input.GetButtonDown("Fire1");
+        yAxis = Input.GetAxisRaw("Vertical");
+        atkInput = Input.GetButtonDown("Fire1");
     }
 
     void Flip()
@@ -89,33 +115,108 @@ public class PlayerController : MonoBehaviour
 
     public bool Grounded()
     {
-        if(Physics2D.Raycast(groundCheckPoint.position, Vector2.down, groundCheckY, whatIsGround)
+        return Physics2D.Raycast(groundCheckPoint.position, Vector2.down, groundCheckY, whatIsGround)
             || Physics2D.Raycast(groundCheckPoint.position + new Vector3(groundCheckX, 0, 0), Vector2.down, groundCheckY, whatIsGround)
-            || Physics2D.Raycast(groundCheckPoint.position + new Vector3(-groundCheckX, 0, 0), Vector2.down, groundCheckY, whatIsGround))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+            || Physics2D.Raycast(groundCheckPoint.position + new Vector3(-groundCheckX, 0, 0), Vector2.down, groundCheckY, whatIsGround);
     }
 
     void Attack()
     {
-        if (attackInput && timeSinceLastAttack >= attackDuration)
+        if (atkInput && timeSinceLastAtk >= atkDuration)
         {
             pState.attacking = true;
-            timeSinceLastAttack = 0f;
+            timeSinceLastAtk = 0f;
             anim.SetTrigger("Attacking");
-            Debug.Log("Attack initiated");
+
+            if (yAxis == 0)
+            {
+                Hit(SideAtkCenter, sideAtkRange);
+                DisplayAttackDebug(0);
+            }
+            else if (yAxis > 0)
+            {
+                Hit(UpAtkCenter, upAtkRange);
+                DisplayAttackDebug(1);
+            }
+            else
+            {
+                Hit(DownAtkCenter, downAtkRange);
+                DisplayAttackDebug(2);
+            }
         }
         else
         {
             pState.attacking = false;
         }
-        timeSinceLastAttack += Time.deltaTime;
+        timeSinceLastAtk += Time.deltaTime;
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        // Do not draw while running in Play Mode (even if Game View Gizmos are turned on)
+        if (Camera.current.cameraType == CameraType.Game) return;
+
+        Gizmos.color = Color.red;
+
+        // Side Attack
+        Gizmos.DrawSphere(SideAtkCenter, 0.04f);            // Center
+        Gizmos.DrawWireCube(SideAtkCenter, sideAtkRange);   // Range
+
+        // Up Attack
+        Gizmos.DrawSphere(UpAtkCenter, 0.04f);              // Center
+        Gizmos.DrawWireCube(UpAtkCenter, upAtkRange);       // Range
+
+        // Down Attack
+        Gizmos.DrawSphere(DownAtkCenter, 0.04f);            // Center
+        Gizmos.DrawWireCube(DownAtkCenter, downAtkRange);   // Range
+    }
+
+    void Hit(Vector3 atkCenter, Vector3 atkRange)
+    {
+        Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(atkCenter, atkRange, 0, atkLayer);
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            enemy.GetComponent<Enemy>()?.Enemyhit(atkDamage); // Adjust damage value as needed
+            float previousHp = realHp;
+            realHp = Mathf.Min(Mathf.Min(previousHp + hpRegainStep, rallyHp), maxHp); // Regain HP when hitting an enemy
+            if (Mathf.Abs(rallyHp-realHp) < 0.0001f && rallyCoroutine != null) StopRallyCoroutine(); // Stop rally countdown if realHp reaches rallyHp
+            NotifyHealthChanged();
+            Debug.Log($"Hit {enemy.name}! Regain {previousHp + hpRegainStep}, Rally {rallyHp}, Real {realHp}");
+        }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        // Implement damage logic here (e.g., reduce health, play hit animation, etc.)
+        Debug.Log($"Player took {damage} damage! Remain: {realHp - damage} at {DateTime.Now.ToString()}");
+        realHp -= damage;
+        if (rallyCoroutine != null) StopRallyCoroutine();
+        else rallyCoroutine = StartCoroutine(RallyHpCountdown());
+        NotifyHealthChanged();
+    }
+
+    IEnumerator RallyHpCountdown()
+    {
+        yield return new WaitForSeconds(rallySettings.x);
+        while (rallyHp >= realHp)
+        {
+            rallyHp -= rallySettings.y;
+            NotifyHealthChanged();
+            yield return new WaitForSeconds(rallySettings.z);
+        }
+        rallyHp = realHp; // Ensure rallyHp doesn't go below realHp
+        rallyCoroutine = null; // Reset the coroutine reference
+        NotifyHealthChanged();
+    }
+
+    private void StopRallyCoroutine()
+    {
+        StopCoroutine(rallyCoroutine);
+        rallyHp = realHp; // Reset rallyHp to realHp when taking damage
+        rallyCoroutine = null;
+    }
+
+    private void NotifyHealthChanged() => OnHealthChanged?.Invoke(realHp, rallyHp, maxHp);
 
     void Jump()
     {
@@ -165,4 +266,32 @@ public class PlayerController : MonoBehaviour
             jumpBufferCounter--;
         }
     }
+
+    void DisplayAttackDebug(int type)
+    {
+        switch (type)
+        {
+            case 0:
+                float direction = transform.localScale.x > 0 ? 1 : -1;
+                Debug.Log($"Attack {(direction > 0 ? "Right" : "Left")}! {DateTime.Now.ToString()}");
+                Debug.DrawLine(SideAtkCenter + Vector3.up * sideAtkRange.y, SideAtkCenter + Vector3.right * sideAtkRange.x * direction, Color.red, atkDuration);
+                Debug.DrawLine(SideAtkCenter - Vector3.up * sideAtkRange.y, SideAtkCenter + Vector3.right * sideAtkRange.x * direction, Color.red, atkDuration);
+                break;
+            case 1:
+                Debug.Log($"Attack Up! {DateTime.Now.ToString()}");
+                Debug.DrawLine(UpAtkCenter - Vector3.right * upAtkRange.x, UpAtkCenter + Vector3.up * upAtkRange.y, Color.red, atkDuration);
+                Debug.DrawLine(UpAtkCenter + Vector3.right * upAtkRange.x, UpAtkCenter + Vector3.up * upAtkRange.y, Color.red, atkDuration);
+                break;
+            case 2:
+                Debug.Log($"Attack Down! {DateTime.Now.ToString()}");
+                Debug.DrawLine(DownAtkCenter - Vector3.right * downAtkRange.x, DownAtkCenter - Vector3.up * downAtkRange.y, Color.red, atkDuration);
+                Debug.DrawLine(DownAtkCenter + Vector3.right * downAtkRange.x, DownAtkCenter - Vector3.up * downAtkRange.y, Color.red, atkDuration);
+                break;
+        }
+    }
+
+    // GETTERS & SETTERS
+    public float RealHp => realHp;
+    public float RallyHp => rallyHp;
+    public float MaxHp => maxHp;
 }
