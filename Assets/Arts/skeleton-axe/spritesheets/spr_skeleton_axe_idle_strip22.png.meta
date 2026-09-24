@@ -1,0 +1,718 @@
+fileFormatVersion: 2
+guid: bb6f1b0ae9b08ee4bbf80f89b806cba7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7765756023658590861
+    second: spr_skeleton_axe_idle_strip22_0
+  - first:
+      213: 7449232899897721504
+    second: spr_skeleton_axe_idle_strip22_1
+  - first:
+      213: -8398834642558148933
+    second: spr_skeleton_axe_idle_strip22_2
+  - first:
+      213: -4040641060801798070
+    second: spr_skeleton_axe_idle_strip22_3
+  - first:
+      213: -175577148041714683
+    second: spr_skeleton_axe_idle_strip22_4
+  - first:
+      213: 3248124200700121329
+    second: spr_skeleton_axe_idle_strip22_5
+  - first:
+      213: 848716741289185357
+    second: spr_skeleton_axe_idle_strip22_6
+  - first:
+      213: -4107671364847677136
+    second: spr_skeleton_axe_idle_strip22_7
+  - first:
+      213: -4131158039352388728
+    second: spr_skeleton_axe_idle_strip22_8
+  - first:
+      213: 3723448609243329444
+    second: spr_skeleton_axe_idle_strip22_9
+  - first:
+      213: -4392989874307181362
+    second: spr_skeleton_axe_idle_strip22_10
+  - first:
+      213: -5803431286982173382
+    second: spr_skeleton_axe_idle_strip22_11
+  - first:
+      213: 4264993164802293604
+    second: spr_skeleton_axe_idle_strip22_12
+  - first:
+      213: 4277259276780138754
+    second: spr_skeleton_axe_idle_strip22_13
+  - first:
+      213: -8047594116409107060
+    second: spr_skeleton_axe_idle_strip22_14
+  - first:
+      213: -2056298241381401196
+    second: spr_skeleton_axe_idle_strip22_15
+  - first:
+      213: -6143664384208016131
+    second: spr_skeleton_axe_idle_strip22_16
+  - first:
+      213: -7215398967334646987
+    second: spr_skeleton_axe_idle_strip22_17
+  - first:
+      213: -7744129256984341700
+    second: spr_skeleton_axe_idle_strip22_18
+  - first:
+      213: -3292948884747604264
+    second: spr_skeleton_axe_idle_strip22_19
+  - first:
+      213: 8521256205665539310
+    second: spr_skeleton_axe_idle_strip22_20
+  - first:
+      213: -7498383751002042065
+    second: spr_skeleton_axe_idle_strip22_21
+  - first:
+      213: 6675601322031703329
+    second: spr_skeleton_axe_idle_strip22_22
+  - first:
+      213: -69445762256317543
+    second: spr_skeleton_axe_idle_strip22_23
+  - first:
+      213: -3722505941843984379
+    second: spr_skeleton_axe_idle_strip22_24
+  - first:
+      213: 4873592918654971806
+    second: spr_skeleton_axe_idle_strip22_25
+  - first:
+      213: 7536914632709010549
+    second: spr_skeleton_axe_idle_strip22_26
+  - first:
+      213: -6785900341203149679
+    second: spr_skeleton_axe_idle_strip22_27
+  - first:
+      213: 2583104142970583698
+    second: spr_skeleton_axe_idle_strip22_28
+  - first:
+      213: 1697264090279038014
+    second: spr_skeleton_axe_idle_strip22_29
+  - first:
+      213: -188246437334196121
+    second: spr_skeleton_axe_idle_strip22_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 33
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spr_skeleton_axe_idle_strip22_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d82358275f185cb60800000000000000
+      internalID: 7765756023658590861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_idle_strip22_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a28e8fcaddf06760800000000000000
+      internalID: 7449232899897721504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_idle_strip22_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbe931b3468517b80800000000000000
+      internalID: -8398834642558148933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_idle_strip22_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a402d0a0d52cce7c0800000000000000
+      internalID: -4040641060801798070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_idle_strip22_4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5042c4c9389309df0800000000000000
+      internalID: -175577148041714683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_idle_strip22_5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f0941150c7a31d20800000000000000
+      internalID: 3248124200700121329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_idle_strip22_6
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d401877216f37cb00800000000000000
+      internalID: 848716741289185357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_idle_strip22_7
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 031d53438ae9ef6c0800000000000000
+      internalID: -4107671364847677136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_idle_strip22_8
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 883d669a6ad2ba6c0800000000000000
+      internalID: -4131158039352388728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_idle_strip22_9
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a3fe5d48c85ca330800000000000000
+      internalID: 3723448609243329444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_idle_strip22_10
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec458000cf6f803c0800000000000000
+      internalID: -4392989874307181362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_idle_strip22_11
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3d1a0d0ef1167fa0800000000000000
+      internalID: -5803431286982173382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_idle_strip22_12
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46f728dbfac403b30800000000000000
+      internalID: 4264993164802293604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_idle_strip22_13
+      rect:
+        serializedVersion: 2
+        x: 3328
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20179bc76a0eb5b30800000000000000
+      internalID: 4277259276780138754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_idle_strip22_14
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8d59e20ac3315090800000000000000
+      internalID: -8047594116409107060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_idle_strip22_15
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49d733ae4af8673e0800000000000000
+      internalID: -2056298241381401196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_idle_strip22_16
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfcef080bc15dbaa0800000000000000
+      internalID: -6143664384208016131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_idle_strip22_17
+      rect:
+        serializedVersion: 2
+        x: 4352
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53b4c473ed0cddb90800000000000000
+      internalID: -7215398967334646987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_idle_strip22_18
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c331dbe8873578490800000000000000
+      internalID: -7744129256984341700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_idle_strip22_19
+      rect:
+        serializedVersion: 2
+        x: 4864
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dea915af681d42d0800000000000000
+      internalID: -3292948884747604264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_idle_strip22_20
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee499ca1f55914670800000000000000
+      internalID: 8521256205665539310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_idle_strip22_21
+      rect:
+        serializedVersion: 2
+        x: 5376
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2156f3e4b360f790800000000000000
+      internalID: -7498383751002042065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 0ae2b997aa579544e99ca43e602a0593
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":256.0,"y":256.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      spr_skeleton_axe_idle_strip22_0: 7765756023658590861
+      spr_skeleton_axe_idle_strip22_1: 7449232899897721504
+      spr_skeleton_axe_idle_strip22_10: -4392989874307181362
+      spr_skeleton_axe_idle_strip22_11: -5803431286982173382
+      spr_skeleton_axe_idle_strip22_12: 4264993164802293604
+      spr_skeleton_axe_idle_strip22_13: 4277259276780138754
+      spr_skeleton_axe_idle_strip22_14: -8047594116409107060
+      spr_skeleton_axe_idle_strip22_15: -2056298241381401196
+      spr_skeleton_axe_idle_strip22_16: -6143664384208016131
+      spr_skeleton_axe_idle_strip22_17: -7215398967334646987
+      spr_skeleton_axe_idle_strip22_18: -7744129256984341700
+      spr_skeleton_axe_idle_strip22_19: -3292948884747604264
+      spr_skeleton_axe_idle_strip22_2: -8398834642558148933
+      spr_skeleton_axe_idle_strip22_20: 8521256205665539310
+      spr_skeleton_axe_idle_strip22_21: -7498383751002042065
+      spr_skeleton_axe_idle_strip22_3: -4040641060801798070
+      spr_skeleton_axe_idle_strip22_4: -175577148041714683
+      spr_skeleton_axe_idle_strip22_5: 3248124200700121329
+      spr_skeleton_axe_idle_strip22_6: 848716741289185357
+      spr_skeleton_axe_idle_strip22_7: -4107671364847677136
+      spr_skeleton_axe_idle_strip22_8: -4131158039352388728
+      spr_skeleton_axe_idle_strip22_9: 3723448609243329444
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

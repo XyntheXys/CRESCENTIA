@@ -1,0 +1,2327 @@
+fileFormatVersion: 2
+guid: e2ca6123a1cc6594fbf9fe8ad7ba608e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -940180172095773750
+    second: spr_skeleton_axe_throw_axe_strip66_0
+  - first:
+      213: -9112964745228999757
+    second: spr_skeleton_axe_throw_axe_strip66_1
+  - first:
+      213: -7391615330987155032
+    second: spr_skeleton_axe_throw_axe_strip66_2
+  - first:
+      213: 5334521819672190032
+    second: spr_skeleton_axe_throw_axe_strip66_3
+  - first:
+      213: -1284150074400880050
+    second: spr_skeleton_axe_throw_axe_strip66_4
+  - first:
+      213: -1023198474409597377
+    second: spr_skeleton_axe_throw_axe_strip66_5
+  - first:
+      213: -6998339077173191732
+    second: spr_skeleton_axe_throw_axe_strip66_6
+  - first:
+      213: 5103027724893154457
+    second: spr_skeleton_axe_throw_axe_strip66_7
+  - first:
+      213: -1669126570205136776
+    second: spr_skeleton_axe_throw_axe_strip66_8
+  - first:
+      213: 434826065765457961
+    second: spr_skeleton_axe_throw_axe_strip66_9
+  - first:
+      213: 1873041472536297438
+    second: spr_skeleton_axe_throw_axe_strip66_10
+  - first:
+      213: 2803664136784022930
+    second: spr_skeleton_axe_throw_axe_strip66_11
+  - first:
+      213: -2992834883294751015
+    second: spr_skeleton_axe_throw_axe_strip66_12
+  - first:
+      213: 6165267348958244888
+    second: spr_skeleton_axe_throw_axe_strip66_13
+  - first:
+      213: -6121221341288435323
+    second: spr_skeleton_axe_throw_axe_strip66_14
+  - first:
+      213: -928670398887694461
+    second: spr_skeleton_axe_throw_axe_strip66_15
+  - first:
+      213: 250700348589782735
+    second: spr_skeleton_axe_throw_axe_strip66_16
+  - first:
+      213: 3033246933068833818
+    second: spr_skeleton_axe_throw_axe_strip66_17
+  - first:
+      213: 7444388276598445980
+    second: spr_skeleton_axe_throw_axe_strip66_18
+  - first:
+      213: 7010919806265992511
+    second: spr_skeleton_axe_throw_axe_strip66_19
+  - first:
+      213: -3982775859864422899
+    second: spr_skeleton_axe_throw_axe_strip66_20
+  - first:
+      213: 2511141968805510590
+    second: spr_skeleton_axe_throw_axe_strip66_21
+  - first:
+      213: 2184918755134138525
+    second: spr_skeleton_axe_throw_axe_strip66_22
+  - first:
+      213: -2024806022399623124
+    second: spr_skeleton_axe_throw_axe_strip66_23
+  - first:
+      213: -2250428376430466901
+    second: spr_skeleton_axe_throw_axe_strip66_24
+  - first:
+      213: 409708731752217621
+    second: spr_skeleton_axe_throw_axe_strip66_25
+  - first:
+      213: 532886523329814686
+    second: spr_skeleton_axe_throw_axe_strip66_26
+  - first:
+      213: 9160515571585791610
+    second: spr_skeleton_axe_throw_axe_strip66_27
+  - first:
+      213: -8989419353028005442
+    second: spr_skeleton_axe_throw_axe_strip66_28
+  - first:
+      213: 4144760172017010074
+    second: spr_skeleton_axe_throw_axe_strip66_29
+  - first:
+      213: 8108091797363535227
+    second: spr_skeleton_axe_throw_axe_strip66_30
+  - first:
+      213: 1807521228354249927
+    second: spr_skeleton_axe_throw_axe_strip66_31
+  - first:
+      213: -7543827856375164521
+    second: spr_skeleton_axe_throw_axe_strip66_32
+  - first:
+      213: -937816765673648419
+    second: spr_skeleton_axe_throw_axe_strip66_33
+  - first:
+      213: -7952914242070038934
+    second: spr_skeleton_axe_throw_axe_strip66_34
+  - first:
+      213: 1373493082694419932
+    second: spr_skeleton_axe_throw_axe_strip66_35
+  - first:
+      213: 7055914607935683842
+    second: spr_skeleton_axe_throw_axe_strip66_36
+  - first:
+      213: 581807648370766136
+    second: spr_skeleton_axe_throw_axe_strip66_37
+  - first:
+      213: 4817289019260278111
+    second: spr_skeleton_axe_throw_axe_strip66_38
+  - first:
+      213: -7055621900787420381
+    second: spr_skeleton_axe_throw_axe_strip66_39
+  - first:
+      213: -6349262815884532884
+    second: spr_skeleton_axe_throw_axe_strip66_40
+  - first:
+      213: 5744632341535208758
+    second: spr_skeleton_axe_throw_axe_strip66_41
+  - first:
+      213: 7263194633137389790
+    second: spr_skeleton_axe_throw_axe_strip66_42
+  - first:
+      213: -4243515058920376009
+    second: spr_skeleton_axe_throw_axe_strip66_43
+  - first:
+      213: 7360940224631247989
+    second: spr_skeleton_axe_throw_axe_strip66_44
+  - first:
+      213: -1517108631620491770
+    second: spr_skeleton_axe_throw_axe_strip66_45
+  - first:
+      213: -1482469444106739262
+    second: spr_skeleton_axe_throw_axe_strip66_46
+  - first:
+      213: -1955267810928317905
+    second: spr_skeleton_axe_throw_axe_strip66_47
+  - first:
+      213: -807108027311802533
+    second: spr_skeleton_axe_throw_axe_strip66_48
+  - first:
+      213: 6505202492245092567
+    second: spr_skeleton_axe_throw_axe_strip66_49
+  - first:
+      213: -6969012682654596480
+    second: spr_skeleton_axe_throw_axe_strip66_50
+  - first:
+      213: -4831664088529994316
+    second: spr_skeleton_axe_throw_axe_strip66_51
+  - first:
+      213: -3186238279049050587
+    second: spr_skeleton_axe_throw_axe_strip66_52
+  - first:
+      213: -2821200537050898132
+    second: spr_skeleton_axe_throw_axe_strip66_53
+  - first:
+      213: -4202055873846152537
+    second: spr_skeleton_axe_throw_axe_strip66_54
+  - first:
+      213: -2543170839865763685
+    second: spr_skeleton_axe_throw_axe_strip66_55
+  - first:
+      213: -4040782309963723788
+    second: spr_skeleton_axe_throw_axe_strip66_56
+  - first:
+      213: 373732419709419807
+    second: spr_skeleton_axe_throw_axe_strip66_57
+  - first:
+      213: -7094037373418629795
+    second: spr_skeleton_axe_throw_axe_strip66_58
+  - first:
+      213: 1266120367089114927
+    second: spr_skeleton_axe_throw_axe_strip66_59
+  - first:
+      213: 541401682497438002
+    second: spr_skeleton_axe_throw_axe_strip66_60
+  - first:
+      213: 3231285406432285673
+    second: spr_skeleton_axe_throw_axe_strip66_61
+  - first:
+      213: 6993504748756090344
+    second: spr_skeleton_axe_throw_axe_strip66_62
+  - first:
+      213: 7735921580299385789
+    second: spr_skeleton_axe_throw_axe_strip66_63
+  - first:
+      213: -5573643732869230185
+    second: spr_skeleton_axe_throw_axe_strip66_64
+  - first:
+      213: 5677175475551343676
+    second: spr_skeleton_axe_throw_axe_strip66_65
+  - first:
+      213: -2280096446418365770
+    second: spr_skeleton_axe_throw_axe_strip66_66
+  - first:
+      213: -66787848852748263
+    second: spr_skeleton_axe_throw_axe_strip66_67
+  - first:
+      213: 1276459373835379640
+    second: spr_skeleton_axe_throw_axe_strip66_68
+  - first:
+      213: -2342501192109729550
+    second: spr_skeleton_axe_throw_axe_strip66_69
+  - first:
+      213: -5514359496512521081
+    second: spr_skeleton_axe_throw_axe_strip66_70
+  - first:
+      213: 7447165285748807983
+    second: spr_skeleton_axe_throw_axe_strip66_71
+  - first:
+      213: 4828059274823113857
+    second: spr_skeleton_axe_throw_axe_strip66_72
+  - first:
+      213: -5307589554093092695
+    second: spr_skeleton_axe_throw_axe_strip66_73
+  - first:
+      213: 4878552447530213121
+    second: spr_skeleton_axe_throw_axe_strip66_74
+  - first:
+      213: 903170588465919734
+    second: spr_skeleton_axe_throw_axe_strip66_75
+  - first:
+      213: 6325143506670578950
+    second: spr_skeleton_axe_throw_axe_strip66_76
+  - first:
+      213: -7189537818657014580
+    second: spr_skeleton_axe_throw_axe_strip66_77
+  - first:
+      213: 6175182012872637087
+    second: spr_skeleton_axe_throw_axe_strip66_78
+  - first:
+      213: 1636225775563074025
+    second: spr_skeleton_axe_throw_axe_strip66_79
+  - first:
+      213: 2572616585928147468
+    second: spr_skeleton_axe_throw_axe_strip66_80
+  - first:
+      213: -294790458577797280
+    second: spr_skeleton_axe_throw_axe_strip66_81
+  - first:
+      213: -8284472608593706981
+    second: spr_skeleton_axe_throw_axe_strip66_82
+  - first:
+      213: 5982253855123337434
+    second: spr_skeleton_axe_throw_axe_strip66_83
+  - first:
+      213: 126304242963154673
+    second: spr_skeleton_axe_throw_axe_strip66_84
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_0
+      rect:
+        serializedVersion: 2
+        x: 2891
+        y: 76
+        width: 98
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac3ad516d1fc3f2f0800000000000000
+      internalID: -940180172095773750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_1
+      rect:
+        serializedVersion: 2
+        x: 3150
+        y: 76
+        width: 95
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b3a7f5c8de388180800000000000000
+      internalID: -9112964745228999757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_2
+      rect:
+        serializedVersion: 2
+        x: 3425
+        y: 76
+        width: 77
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a1ed28d405bb6990800000000000000
+      internalID: -7391615330987155032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_3
+      rect:
+        serializedVersion: 2
+        x: 3688
+        y: 76
+        width: 76
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05c912cd457080a40800000000000000
+      internalID: 5334521819672190032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_4
+      rect:
+        serializedVersion: 2
+        x: 3949
+        y: 76
+        width: 84
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4a4b01af48cd2ee0800000000000000
+      internalID: -1284150074400880050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_5
+      rect:
+        serializedVersion: 2
+        x: 4209
+        y: 76
+        width: 84
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f36281e986edcc1f0800000000000000
+      internalID: -1023198474409597377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_6
+      rect:
+        serializedVersion: 2
+        x: 4469
+        y: 75
+        width: 88
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccb5b5720b7e0ee90800000000000000
+      internalID: -6998339077173191732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_7
+      rect:
+        serializedVersion: 2
+        x: 12357
+        y: 75
+        width: 99
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99ce935cda891d640800000000000000
+      internalID: 5103027724893154457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_8
+      rect:
+        serializedVersion: 2
+        x: 12568
+        y: 206
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 878b1c15a3216d8e0800000000000000
+      internalID: -1669126570205136776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_9
+      rect:
+        serializedVersion: 2
+        x: 12584
+        y: 75
+        width: 128
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 920e705c000d80600800000000000000
+      internalID: 434826065765457961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_10
+      rect:
+        serializedVersion: 2
+        x: 12809
+        y: 156
+        width: 89
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edfb914ab416ef910800000000000000
+      internalID: 1873041472536297438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_11
+      rect:
+        serializedVersion: 2
+        x: 13066
+        y: 154
+        width: 84
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29d838e8dad98e620800000000000000
+      internalID: 2803664136784022930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_12
+      rect:
+        serializedVersion: 2
+        x: 13321
+        y: 155
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d691d5c7805776d0800000000000000
+      internalID: -2992834883294751015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_13
+      rect:
+        serializedVersion: 2
+        x: 13577
+        y: 155
+        width: 86
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81078f72dfd6f8550800000000000000
+      internalID: 6165267348958244888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_14
+      rect:
+        serializedVersion: 2
+        x: 13834
+        y: 154
+        width: 84
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58176f82f9d0d0ba0800000000000000
+      internalID: -6121221341288435323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_15
+      rect:
+        serializedVersion: 2
+        x: 14089
+        y: 156
+        width: 86
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38fe0e84133bc13f0800000000000000
+      internalID: -928670398887694461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_16
+      rect:
+        serializedVersion: 2
+        x: 14345
+        y: 154
+        width: 85
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc6b2c683aaaa7300800000000000000
+      internalID: 250700348589782735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_17
+      rect:
+        serializedVersion: 2
+        x: 14601
+        y: 157
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a146c99c302481a20800000000000000
+      internalID: 3033246933068833818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_18
+      rect:
+        serializedVersion: 2
+        x: 14858
+        y: 154
+        width: 84
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c979bbc02b7cf4760800000000000000
+      internalID: 7444388276598445980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_19
+      rect:
+        serializedVersion: 2
+        x: 15115
+        y: 153
+        width: 84
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f352c391b6acb4160800000000000000
+      internalID: 7010919806265992511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_20
+      rect:
+        serializedVersion: 2
+        x: 15370
+        y: 155
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d06b7c405765ab8c0800000000000000
+      internalID: -3982775859864422899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_21
+      rect:
+        serializedVersion: 2
+        x: 15628
+        y: 155
+        width: 82
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebd3a37e05e59d220800000000000000
+      internalID: 2511141968805510590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_22
+      rect:
+        serializedVersion: 2
+        x: 15881
+        y: 150
+        width: 82
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d98ebd61804625e10800000000000000
+      internalID: 2184918755134138525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_23
+      rect:
+        serializedVersion: 2
+        x: 16127
+        y: 145
+        width: 54
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c208cc786a176e3e0800000000000000
+      internalID: -2024806022399623124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_24
+      rect:
+        serializedVersion: 2
+        x: 2362
+        y: 76
+        width: 115
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba8276e905fd4c0e0800000000000000
+      internalID: -2250428376430466901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_25
+      rect:
+        serializedVersion: 2
+        x: 2627
+        y: 76
+        width: 106
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51c7779bbe39fa500800000000000000
+      internalID: 409708731752217621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_26
+      rect:
+        serializedVersion: 2
+        x: 4728
+        y: 75
+        width: 95
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e90aaa83871356700800000000000000
+      internalID: 532886523329814686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_27
+      rect:
+        serializedVersion: 2
+        x: 4984
+        y: 75
+        width: 98
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a763ecbb060b02f70800000000000000
+      internalID: 9160515571585791610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_28
+      rect:
+        serializedVersion: 2
+        x: 5240
+        y: 75
+        width: 100
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb17eb5f9ba2f3380800000000000000
+      internalID: -8989419353028005442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_29
+      rect:
+        serializedVersion: 2
+        x: 5496
+        y: 75
+        width: 101
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a95c244aa65258930800000000000000
+      internalID: 4144760172017010074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_30
+      rect:
+        serializedVersion: 2
+        x: 5752
+        y: 75
+        width: 102
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7dac1cf78ab58070800000000000000
+      internalID: 8108091797363535227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_31
+      rect:
+        serializedVersion: 2
+        x: 6008
+        y: 75
+        width: 102
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c468040bfa951910800000000000000
+      internalID: 1807521228354249927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_32
+      rect:
+        serializedVersion: 2
+        x: 6265
+        y: 75
+        width: 102
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 791df069880fe4790800000000000000
+      internalID: -7543827856375164521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_33
+      rect:
+        serializedVersion: 2
+        x: 6521
+        y: 75
+        width: 102
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddecd91de943cf2f0800000000000000
+      internalID: -937816765673648419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_34
+      rect:
+        serializedVersion: 2
+        x: 6776
+        y: 75
+        width: 104
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a66354812a291a190800000000000000
+      internalID: -7952914242070038934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_35
+      rect:
+        serializedVersion: 2
+        x: 7028
+        y: 75
+        width: 108
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd5057f7ea0af0310800000000000000
+      internalID: 1373493082694419932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_36
+      rect:
+        serializedVersion: 2
+        x: 7281
+        y: 75
+        width: 111
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20dfe7bb3f4abe160800000000000000
+      internalID: 7055914607935683842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_37
+      rect:
+        serializedVersion: 2
+        x: 7536
+        y: 75
+        width: 113
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 831beb049fef21800800000000000000
+      internalID: 581807648370766136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_38
+      rect:
+        serializedVersion: 2
+        x: 7791
+        y: 75
+        width: 114
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f55166507d27ad240800000000000000
+      internalID: 4817289019260278111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_39
+      rect:
+        serializedVersion: 2
+        x: 8042
+        y: 75
+        width: 120
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32379167345651e90800000000000000
+      internalID: -7055621900787420381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_40
+      rect:
+        serializedVersion: 2
+        x: 8296
+        y: 75
+        width: 123
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c632b99db13e2e7a0800000000000000
+      internalID: -6349262815884532884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_41
+      rect:
+        serializedVersion: 2
+        x: 8550
+        y: 75
+        width: 125
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6353d62ada809bf40800000000000000
+      internalID: 5744632341535208758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_42
+      rect:
+        serializedVersion: 2
+        x: 8804
+        y: 75
+        width: 127
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed08daa690d0cc460800000000000000
+      internalID: 7263194633137389790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_43
+      rect:
+        serializedVersion: 2
+        x: 9059
+        y: 75
+        width: 129
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 739b70a79810c15c0800000000000000
+      internalID: -4243515058920376009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_44
+      rect:
+        serializedVersion: 2
+        x: 9314
+        y: 75
+        width: 130
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57497066220572660800000000000000
+      internalID: 7360940224631247989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_45
+      rect:
+        serializedVersion: 2
+        x: 9569
+        y: 75
+        width: 131
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 606e49eccb522fae0800000000000000
+      internalID: -1517108631620491770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_46
+      rect:
+        serializedVersion: 2
+        x: 9824
+        y: 75
+        width: 132
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c1a5a125e53d6be0800000000000000
+      internalID: -1482469444106739262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_47
+      rect:
+        serializedVersion: 2
+        x: 10080
+        y: 75
+        width: 133
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2aacd0194e7dd4e0800000000000000
+      internalID: -1955267810928317905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_48
+      rect:
+        serializedVersion: 2
+        x: 10335
+        y: 75
+        width: 134
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b57b6b086839cc4f0800000000000000
+      internalID: -807108027311802533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_49
+      rect:
+        serializedVersion: 2
+        x: 10590
+        y: 75
+        width: 136
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d8214e533f174a50800000000000000
+      internalID: 6505202492245092567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_50
+      rect:
+        serializedVersion: 2
+        x: 10846
+        y: 75
+        width: 136
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0824e2773e7194f90800000000000000
+      internalID: -6969012682654596480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_51
+      rect:
+        serializedVersion: 2
+        x: 11101
+        y: 75
+        width: 136
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bd78295c1b72fcb0800000000000000
+      internalID: -4831664088529994316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_52
+      rect:
+        serializedVersion: 2
+        x: 11355
+        y: 75
+        width: 137
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5268787aa2538c3d0800000000000000
+      internalID: -3186238279049050587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_53
+      rect:
+        serializedVersion: 2
+        x: 11610
+        y: 75
+        width: 137
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c21a0f41f0519d8d0800000000000000
+      internalID: -2821200537050898132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_54
+      rect:
+        serializedVersion: 2
+        x: 11864
+        y: 75
+        width: 137
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a27e09327c4fa5c0800000000000000
+      internalID: -4202055873846152537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_55
+      rect:
+        serializedVersion: 2
+        x: 12120
+        y: 75
+        width: 121
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b985bae6897d4bcd0800000000000000
+      internalID: -2543170839865763685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_56
+      rect:
+        serializedVersion: 2
+        x: 12850
+        y: 148
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fb0ee7e5e14ce7c0800000000000000
+      internalID: -4040782309963723788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_57
+      rect:
+        serializedVersion: 2
+        x: 15624
+        y: 173
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f11c3d5d7a3cf2500800000000000000
+      internalID: 373732419709419807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_58
+      rect:
+        serializedVersion: 2
+        x: 15878
+        y: 177
+        width: 16
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d55990e389aec8d90800000000000000
+      internalID: -7094037373418629795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_59
+      rect:
+        serializedVersion: 2
+        x: 16383
+        y: 150
+        width: 12
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2fdb3304c9229110800000000000000
+      internalID: 1266120367089114927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_60
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 76
+        width: 110
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2310f0636f1738700800000000000000
+      internalID: 541401682497438002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_61
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 76
+        width: 111
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e3dc4205f4d7dc20800000000000000
+      internalID: 3231285406432285673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_62
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 76
+        width: 112
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ed3d9c048bed0160800000000000000
+      internalID: 6993504748756090344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_63
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 76
+        width: 113
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbbf50cc0b38b5b60800000000000000
+      internalID: 7735921580299385789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_64
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 76
+        width: 112
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7915fbd2e8076a2b0800000000000000
+      internalID: -5573643732869230185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_65
+      rect:
+        serializedVersion: 2
+        x: 1336
+        y: 76
+        width: 114
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c341ccb140169ce40800000000000000
+      internalID: 5677175475551343676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_66
+      rect:
+        serializedVersion: 2
+        x: 1589
+        y: 76
+        width: 118
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b25a99cc587b50e0800000000000000
+      internalID: -2280096446418365770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_67
+      rect:
+        serializedVersion: 2
+        x: 1844
+        y: 76
+        width: 120
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 918c1d92ec8b21ff0800000000000000
+      internalID: -66787848852748263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_68
+      rect:
+        serializedVersion: 2
+        x: 2102
+        y: 76
+        width: 118
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b3ecab9905e6b110800000000000000
+      internalID: 1276459373835379640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_69
+      rect:
+        serializedVersion: 2
+        x: 12852
+        y: 75
+        width: 121
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f8de5ea393cd7fd0800000000000000
+      internalID: -2342501192109729550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_70
+      rect:
+        serializedVersion: 2
+        x: 13108
+        y: 75
+        width: 123
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78cb196114f0973b0800000000000000
+      internalID: -5514359496512521081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_71
+      rect:
+        serializedVersion: 2
+        x: 13364
+        y: 75
+        width: 124
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f299da0ee55a95760800000000000000
+      internalID: 7447165285748807983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_72
+      rect:
+        serializedVersion: 2
+        x: 13620
+        y: 75
+        width: 124
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18c9c5e8456b00340800000000000000
+      internalID: 4828059274823113857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_73
+      rect:
+        serializedVersion: 2
+        x: 13876
+        y: 75
+        width: 124
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a015bedb67a756b0800000000000000
+      internalID: -5307589554093092695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_74
+      rect:
+        serializedVersion: 2
+        x: 14132
+        y: 75
+        width: 124
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10f96257a9914b340800000000000000
+      internalID: 4878552447530213121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_75
+      rect:
+        serializedVersion: 2
+        x: 14388
+        y: 75
+        width: 124
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f677117dd4b88c00800000000000000
+      internalID: 903170588465919734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_76
+      rect:
+        serializedVersion: 2
+        x: 14644
+        y: 75
+        width: 124
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60de77cd18c67c750800000000000000
+      internalID: 6325143506670578950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_77
+      rect:
+        serializedVersion: 2
+        x: 14900
+        y: 75
+        width: 124
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccc36bb1271a93c90800000000000000
+      internalID: -7189537818657014580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_78
+      rect:
+        serializedVersion: 2
+        x: 15156
+        y: 75
+        width: 124
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9ab7acb257a2b550800000000000000
+      internalID: 6175182012872637087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_79
+      rect:
+        serializedVersion: 2
+        x: 15411
+        y: 75
+        width: 124
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e966cc7caa05b610800000000000000
+      internalID: 1636225775563074025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_80
+      rect:
+        serializedVersion: 2
+        x: 15668
+        y: 75
+        width: 123
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0286839725c3b320800000000000000
+      internalID: 2572616585928147468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_81
+      rect:
+        serializedVersion: 2
+        x: 15924
+        y: 75
+        width: 123
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06fbb49c3a1b8ebf0800000000000000
+      internalID: -294790458577797280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_82
+      rect:
+        serializedVersion: 2
+        x: 16180
+        y: 75
+        width: 123
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1081553e04a70d80800000000000000
+      internalID: -8284472608593706981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_83
+      rect:
+        serializedVersion: 2
+        x: 16436
+        y: 75
+        width: 123
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad076d69f2c350350800000000000000
+      internalID: 5982253855123337434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_throw_axe_strip66_84
+      rect:
+        serializedVersion: 2
+        x: 16692
+        y: 75
+        width: 123
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f6817f2a09b0c100800000000000000
+      internalID: 126304242963154673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      spr_skeleton_axe_throw_axe_strip66_0: -940180172095773750
+      spr_skeleton_axe_throw_axe_strip66_1: -9112964745228999757
+      spr_skeleton_axe_throw_axe_strip66_10: 1873041472536297438
+      spr_skeleton_axe_throw_axe_strip66_11: 2803664136784022930
+      spr_skeleton_axe_throw_axe_strip66_12: -2992834883294751015
+      spr_skeleton_axe_throw_axe_strip66_13: 6165267348958244888
+      spr_skeleton_axe_throw_axe_strip66_14: -6121221341288435323
+      spr_skeleton_axe_throw_axe_strip66_15: -928670398887694461
+      spr_skeleton_axe_throw_axe_strip66_16: 250700348589782735
+      spr_skeleton_axe_throw_axe_strip66_17: 3033246933068833818
+      spr_skeleton_axe_throw_axe_strip66_18: 7444388276598445980
+      spr_skeleton_axe_throw_axe_strip66_19: 7010919806265992511
+      spr_skeleton_axe_throw_axe_strip66_2: -7391615330987155032
+      spr_skeleton_axe_throw_axe_strip66_20: -3982775859864422899
+      spr_skeleton_axe_throw_axe_strip66_21: 2511141968805510590
+      spr_skeleton_axe_throw_axe_strip66_22: 2184918755134138525
+      spr_skeleton_axe_throw_axe_strip66_23: -2024806022399623124
+      spr_skeleton_axe_throw_axe_strip66_24: -2250428376430466901
+      spr_skeleton_axe_throw_axe_strip66_25: 409708731752217621
+      spr_skeleton_axe_throw_axe_strip66_26: 532886523329814686
+      spr_skeleton_axe_throw_axe_strip66_27: 9160515571585791610
+      spr_skeleton_axe_throw_axe_strip66_28: -8989419353028005442
+      spr_skeleton_axe_throw_axe_strip66_29: 4144760172017010074
+      spr_skeleton_axe_throw_axe_strip66_3: 5334521819672190032
+      spr_skeleton_axe_throw_axe_strip66_30: 8108091797363535227
+      spr_skeleton_axe_throw_axe_strip66_31: 1807521228354249927
+      spr_skeleton_axe_throw_axe_strip66_32: -7543827856375164521
+      spr_skeleton_axe_throw_axe_strip66_33: -937816765673648419
+      spr_skeleton_axe_throw_axe_strip66_34: -7952914242070038934
+      spr_skeleton_axe_throw_axe_strip66_35: 1373493082694419932
+      spr_skeleton_axe_throw_axe_strip66_36: 7055914607935683842
+      spr_skeleton_axe_throw_axe_strip66_37: 581807648370766136
+      spr_skeleton_axe_throw_axe_strip66_38: 4817289019260278111
+      spr_skeleton_axe_throw_axe_strip66_39: -7055621900787420381
+      spr_skeleton_axe_throw_axe_strip66_4: -1284150074400880050
+      spr_skeleton_axe_throw_axe_strip66_40: -6349262815884532884
+      spr_skeleton_axe_throw_axe_strip66_41: 5744632341535208758
+      spr_skeleton_axe_throw_axe_strip66_42: 7263194633137389790
+      spr_skeleton_axe_throw_axe_strip66_43: -4243515058920376009
+      spr_skeleton_axe_throw_axe_strip66_44: 7360940224631247989
+      spr_skeleton_axe_throw_axe_strip66_45: -1517108631620491770
+      spr_skeleton_axe_throw_axe_strip66_46: -1482469444106739262
+      spr_skeleton_axe_throw_axe_strip66_47: -1955267810928317905
+      spr_skeleton_axe_throw_axe_strip66_48: -807108027311802533
+      spr_skeleton_axe_throw_axe_strip66_49: 6505202492245092567
+      spr_skeleton_axe_throw_axe_strip66_5: -1023198474409597377
+      spr_skeleton_axe_throw_axe_strip66_50: -6969012682654596480
+      spr_skeleton_axe_throw_axe_strip66_51: -4831664088529994316
+      spr_skeleton_axe_throw_axe_strip66_52: -3186238279049050587
+      spr_skeleton_axe_throw_axe_strip66_53: -2821200537050898132
+      spr_skeleton_axe_throw_axe_strip66_54: -4202055873846152537
+      spr_skeleton_axe_throw_axe_strip66_55: -2543170839865763685
+      spr_skeleton_axe_throw_axe_strip66_56: -4040782309963723788
+      spr_skeleton_axe_throw_axe_strip66_57: 373732419709419807
+      spr_skeleton_axe_throw_axe_strip66_58: -7094037373418629795
+      spr_skeleton_axe_throw_axe_strip66_59: 1266120367089114927
+      spr_skeleton_axe_throw_axe_strip66_6: -6998339077173191732
+      spr_skeleton_axe_throw_axe_strip66_60: 541401682497438002
+      spr_skeleton_axe_throw_axe_strip66_61: 3231285406432285673
+      spr_skeleton_axe_throw_axe_strip66_62: 6993504748756090344
+      spr_skeleton_axe_throw_axe_strip66_63: 7735921580299385789
+      spr_skeleton_axe_throw_axe_strip66_64: -5573643732869230185
+      spr_skeleton_axe_throw_axe_strip66_65: 5677175475551343676
+      spr_skeleton_axe_throw_axe_strip66_66: -2280096446418365770
+      spr_skeleton_axe_throw_axe_strip66_67: -66787848852748263
+      spr_skeleton_axe_throw_axe_strip66_68: 1276459373835379640
+      spr_skeleton_axe_throw_axe_strip66_69: -2342501192109729550
+      spr_skeleton_axe_throw_axe_strip66_7: 5103027724893154457
+      spr_skeleton_axe_throw_axe_strip66_70: -5514359496512521081
+      spr_skeleton_axe_throw_axe_strip66_71: 7447165285748807983
+      spr_skeleton_axe_throw_axe_strip66_72: 4828059274823113857
+      spr_skeleton_axe_throw_axe_strip66_73: -5307589554093092695
+      spr_skeleton_axe_throw_axe_strip66_74: 4878552447530213121
+      spr_skeleton_axe_throw_axe_strip66_75: 903170588465919734
+      spr_skeleton_axe_throw_axe_strip66_76: 6325143506670578950
+      spr_skeleton_axe_throw_axe_strip66_77: -7189537818657014580
+      spr_skeleton_axe_throw_axe_strip66_78: 6175182012872637087
+      spr_skeleton_axe_throw_axe_strip66_79: 1636225775563074025
+      spr_skeleton_axe_throw_axe_strip66_8: -1669126570205136776
+      spr_skeleton_axe_throw_axe_strip66_80: 2572616585928147468
+      spr_skeleton_axe_throw_axe_strip66_81: -294790458577797280
+      spr_skeleton_axe_throw_axe_strip66_82: -8284472608593706981
+      spr_skeleton_axe_throw_axe_strip66_83: 5982253855123337434
+      spr_skeleton_axe_throw_axe_strip66_84: 126304242963154673
+      spr_skeleton_axe_throw_axe_strip66_9: 434826065765457961
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

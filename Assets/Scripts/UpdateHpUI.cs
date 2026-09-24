@@ -19,6 +19,7 @@ public class UpdateHpUI : MonoBehaviour
 
     void UpdateBars(float currentHealth, float currentRallyHealth, float maxHealth)
     {
+        //Debug.Log($"Update hp bar: real {currentHealth} rally {currentRallyHealth} max {maxHealth}");
         realHpBar.value = currentHealth / maxHealth;
         rallyHpBar.value = currentRallyHealth / maxHealth;
     }
