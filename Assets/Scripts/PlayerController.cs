@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using static UnityEngine.UI.Image;
 
 public class PlayerController : MonoBehaviour
@@ -50,6 +51,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] [Tooltip("Amount of HP to regain when player hit success")] private float hpRegainStep;
     private Coroutine rallyCoroutine;
 
+    [Header("Other")]
+    //[SerializeField] private bool debugMode = true;
+    [SerializeField] private GameObject settingsPage;
+    private bool isSettingsPageActive = false;
 
     private PlayerStateList pState;
     private Rigidbody2D rb;
@@ -67,6 +72,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject); // Optional: Persist across scenes
         }
     }
 
@@ -76,11 +82,18 @@ public class PlayerController : MonoBehaviour
         pState = GetComponent<PlayerStateList>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        isSettingsPageActive = settingsPage.activeSelf;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            isSettingsPageActive = !isSettingsPageActive;
+            settingsPage.SetActive(isSettingsPageActive);
+        }
+
         GetInputs();
         UpdateJumpVariables();
         Flip();
@@ -123,6 +136,8 @@ public class PlayerController : MonoBehaviour
 
     void Attack()
     {
+        timeSinceLastAtk += Time.deltaTime;
+        if (settingsPage.activeSelf) return; // Prevent attacking when settings page is active
         if (atkInput && timeSinceLastAtk >= atkDuration)
         {
             pState.attacking = true;
@@ -152,7 +167,6 @@ public class PlayerController : MonoBehaviour
         {
             pState.attacking = false;
         }
-        timeSinceLastAtk += Time.deltaTime;
     }
 
     void Hit(Vector3 atkCenter, Vector3 atkRange)

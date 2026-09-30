@@ -20,14 +20,19 @@ public class DragonWarrior : Enemy
     [SerializeField] private Vector3 setting;
 
     private Animator anim;
+    Vector3 originalScale;
+    private bool isInAnimation = false;
+    int direction => transform.position.x > PlayerController.Instance.transform.position.x ? -1 : 1;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
+        originalScale = transform.localScale;
     }
 
     private void Update()
     {
+        if (!isInAnimation) transform.localScale = new Vector3(direction * Mathf.Abs(originalScale.x), originalScale.y, originalScale.z);
         if (Keyboard.current.digit1Key.wasPressedThisFrame) Fireball();
         if (Keyboard.current.digit2Key.wasPressedThisFrame) StartCoroutine(FlyingKick());
         if (Keyboard.current.digit3Key.wasPressedThisFrame) StartCoroutine(Strike());
@@ -40,11 +45,13 @@ public class DragonWarrior : Enemy
         if (fireball.activeSelf) fireball.SetActive(false);
         fireball.SetActive(true);
         fireball.GetComponent<SpriteRenderer>().enabled = false;
-        fireball.GetComponent<Fireball>().Shoot(fireballDuration, fireballSpeed);
+        fireball.GetComponent<Fireball>().Shoot(fireballDuration, fireballSpeed * direction);
     }
 
     IEnumerator FlyingKick()
     {
+        int snapshotDirection = direction;
+        isInAnimation = true;
         anim.SetTrigger("Flying_Kick");
         Vector3 startPos = transform.position;
 
@@ -54,7 +61,7 @@ public class DragonWarrior : Enemy
         while (t < step1.z)
         {
             t += Time.deltaTime;
-            transform.position = Vector3.Lerp(startPos, startPos + new Vector3(step1.x, step1.y, 0), t / step1.z);
+            transform.position = Vector3.Lerp(startPos, startPos + new Vector3(step1.x * snapshotDirection, step1.y, 0), t / step1.z);
             yield return null;
         }
 
@@ -65,14 +72,18 @@ public class DragonWarrior : Enemy
         while (t < step2.z)
         {
             t += Time.deltaTime;
-            transform.position = Vector3.Lerp(startPos + new Vector3(step1.x, step1.y, 0), startPos + new Vector3(step2.x, step2.y, 0), t / step2.z);
+            transform.position = Vector3.Lerp(startPos + new Vector3(step1.x * snapshotDirection, step1.y, 0), startPos + new Vector3(step2.x * snapshotDirection, step2.y, 0), t / step2.z);
             yield return null;
         }
         allowDmgFromHitbox = false;
+        yield return new WaitForSeconds(0.4f); // Small delay to ensure the hitbox is disabled before ending the animation
+        isInAnimation = false;
     }
 
     IEnumerator Strike()
     {
+        int snapshotDirection = direction;
+        isInAnimation = true;
         anim.SetTrigger("Strike");
         float t = 0;
         Vector3 startPos = transform.position;
@@ -82,10 +93,12 @@ public class DragonWarrior : Enemy
         while (t < setting.z)
         {
             t += Time.deltaTime;
-            transform.position = Vector3.Lerp(startPos, startPos + new Vector3(setting.x, 0, 0), t / setting.z);
+            transform.position = Vector3.Lerp(startPos, startPos + new Vector3(setting.x * snapshotDirection, 0, 0), t / setting.z);
             yield return null;
         }
         allowDmgFromHitbox = false;
+        yield return new WaitForSeconds(0.7f); // Small delay to ensure the hitbox is disabled before ending the animation
+        isInAnimation = false;
     }
 
     private void OnTriggerEnter2D(Collider2D col)
