@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void Enemyhit(float damage)
+    public void TakeDamage(float damage)
     {
         if (health <= 0) return;
         //Debug.Log($"Enemy took {damage} damage! Remain: {health - damage} at {System.DateTime.Now.ToString()}");

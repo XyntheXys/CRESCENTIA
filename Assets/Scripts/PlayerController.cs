@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using static UnityEngine.UI.Image;
 
 public class PlayerController : MonoBehaviour
@@ -37,6 +38,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] [Tooltip("X:\tSide Attack Offset\nY:\tUp Attack Offset\nZ:\tDown Attack Offset")] private Vector3 atkOffset;
     [SerializeField] private Vector2 sideAtkRange, upAtkRange, downAtkRange;
     [SerializeField] private LayerMask atkLayer;
+    [SerializeField] private GameObject slashEffect;
 
     // Properties: PascalCase
     private Vector3 SideAtkCenter => transform.position + new Vector3(transform.localScale.x * atkOffset.x, -0.5f, 0);
@@ -49,6 +51,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] [Tooltip("Amount of HP to regain when player hit success")] private float hpRegainStep;
     private Coroutine rallyCoroutine;
 
+    [Header("Other")]
+    //[SerializeField] private bool debugMode = true;
+    [SerializeField] private GameObject settingsPage;
+    private bool isSettingsPageActive = false;
 
     private PlayerStateList pState;
     private Rigidbody2D rb;
@@ -66,6 +72,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject); // Optional: Persist across scenes
         }
     }
 
@@ -75,11 +82,18 @@ public class PlayerController : MonoBehaviour
         pState = GetComponent<PlayerStateList>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        isSettingsPageActive = settingsPage.activeSelf;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            isSettingsPageActive = !isSettingsPageActive;
+            settingsPage.SetActive(isSettingsPageActive);
+        }
+
         GetInputs();
         UpdateJumpVariables();
         Flip();
@@ -122,6 +136,8 @@ public class PlayerController : MonoBehaviour
 
     void Attack()
     {
+        timeSinceLastAtk += Time.deltaTime;
+        if (settingsPage.activeSelf) return; // Prevent attacking when settings page is active
         if (atkInput && timeSinceLastAtk >= atkDuration)
         {
             pState.attacking = true;
@@ -131,44 +147,26 @@ public class PlayerController : MonoBehaviour
             if (yAxis == 0)
             {
                 Hit(SideAtkCenter, sideAtkRange);
-                DisplayAttackDebug(0);
+                StartCoroutine(ShowSlashEffect(SideAtkCenter));
+                //DisplayAttackDebug(0);
             }
             else if (yAxis > 0)
             {
                 Hit(UpAtkCenter, upAtkRange);
-                DisplayAttackDebug(1);
+                StartCoroutine(ShowSlashEffect(UpAtkCenter, 90));
+                //DisplayAttackDebug(1);
             }
             else
             {
                 Hit(DownAtkCenter, downAtkRange);
-                DisplayAttackDebug(2);
+                StartCoroutine(ShowSlashEffect(DownAtkCenter, -90));
+                //DisplayAttackDebug(2);
             }
         }
         else
         {
             pState.attacking = false;
         }
-        timeSinceLastAtk += Time.deltaTime;
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        // Do not draw while running in Play Mode (even if Game View Gizmos are turned on)
-        if (Camera.current.cameraType == CameraType.Game) return;
-
-        Gizmos.color = Color.red;
-
-        // Side Attack
-        Gizmos.DrawSphere(SideAtkCenter, 0.04f);            // Center
-        Gizmos.DrawWireCube(SideAtkCenter, sideAtkRange);   // Range
-
-        // Up Attack
-        Gizmos.DrawSphere(UpAtkCenter, 0.04f);              // Center
-        Gizmos.DrawWireCube(UpAtkCenter, upAtkRange);       // Range
-
-        // Down Attack
-        Gizmos.DrawSphere(DownAtkCenter, 0.04f);            // Center
-        Gizmos.DrawWireCube(DownAtkCenter, downAtkRange);   // Range
     }
 
     void Hit(Vector3 atkCenter, Vector3 atkRange)
@@ -176,7 +174,7 @@ public class PlayerController : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(atkCenter, atkRange, 0, atkLayer);
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<Enemy>()?.Enemyhit(atkDamage); // Adjust damage value as needed
+            enemy.GetComponent<Enemy>()?.TakeDamage(atkDamage); // Adjust damage value as needed
             float previousHp = realHp;
             realHp = Mathf.Min(Mathf.Min(previousHp + hpRegainStep, rallyHp), maxHp); // Regain HP when hitting an enemy
             if (Mathf.Abs(rallyHp-realHp) < 0.0001f && rallyCoroutine != null) StopRallyCoroutine(); // Stop rally countdown if realHp reaches rallyHp
@@ -185,11 +183,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    IEnumerator ShowSlashEffect(Vector3 atkCenter, float angle = 0)
+    {
+        slashEffect.SetActive(true);
+        slashEffect.transform.position = atkCenter;
+        slashEffect.transform.localEulerAngles = new Vector3(0,0,angle);
+        yield return new WaitForSeconds(0.2f);
+        slashEffect.SetActive(false);
+    }
+
     public void TakeDamage(float damage)
     {
         // Implement damage logic here (e.g., reduce health, play hit animation, etc.)
-        Debug.Log($"Player took {damage} damage! Remain: {realHp - damage} at {DateTime.Now.ToString()}");
         realHp -= damage;
+        Debug.Log($"Player took {damage} damage! Remain: {realHp} at {DateTime.Now.ToString()}");
         if (rallyCoroutine != null) StopRallyCoroutine();
         else rallyCoroutine = StartCoroutine(RallyHpCountdown());
         NotifyHealthChanged();
@@ -267,6 +274,25 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnDrawGizmosSelected()
+    {
+        // Do not draw while running in Play Mode (even if Game View Gizmos are turned on)
+        if (Camera.current.cameraType == CameraType.Game) return;
+
+        Gizmos.color = Color.red;
+
+        // Side Attack
+        Gizmos.DrawSphere(SideAtkCenter, 0.04f);            // Center
+        Gizmos.DrawWireCube(SideAtkCenter, sideAtkRange);   // Range
+
+        // Up Attack
+        Gizmos.DrawSphere(UpAtkCenter, 0.04f);              // Center
+        Gizmos.DrawWireCube(UpAtkCenter, upAtkRange);       // Range
+
+        // Down Attack
+        Gizmos.DrawSphere(DownAtkCenter, 0.04f);            // Center
+        Gizmos.DrawWireCube(DownAtkCenter, downAtkRange);   // Range
+    }
     void DisplayAttackDebug(int type)
     {
         switch (type)

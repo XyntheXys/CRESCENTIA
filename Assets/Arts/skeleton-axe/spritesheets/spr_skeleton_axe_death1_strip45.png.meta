@@ -1,0 +1,1412 @@
+fileFormatVersion: 2
+guid: 4ae9713d6c7150241bdd838af15a15dd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 942344482527006637
+    second: spr_skeleton_axe_death1_strip45_0
+  - first:
+      213: -3677230400070347269
+    second: spr_skeleton_axe_death1_strip45_1
+  - first:
+      213: -8225446759046751311
+    second: spr_skeleton_axe_death1_strip45_2
+  - first:
+      213: 1460883283355100923
+    second: spr_skeleton_axe_death1_strip45_3
+  - first:
+      213: 1808117040197602272
+    second: spr_skeleton_axe_death1_strip45_4
+  - first:
+      213: -8173452704204525384
+    second: spr_skeleton_axe_death1_strip45_5
+  - first:
+      213: -1408903052738603783
+    second: spr_skeleton_axe_death1_strip45_6
+  - first:
+      213: -9187017916699619514
+    second: spr_skeleton_axe_death1_strip45_7
+  - first:
+      213: 4707865989731321567
+    second: spr_skeleton_axe_death1_strip45_8
+  - first:
+      213: -7010441109674893738
+    second: spr_skeleton_axe_death1_strip45_9
+  - first:
+      213: -7698104488576604125
+    second: spr_skeleton_axe_death1_strip45_10
+  - first:
+      213: 5461174327501596623
+    second: spr_skeleton_axe_death1_strip45_11
+  - first:
+      213: -239784232745214892
+    second: spr_skeleton_axe_death1_strip45_12
+  - first:
+      213: 2182803247202545213
+    second: spr_skeleton_axe_death1_strip45_13
+  - first:
+      213: 820701609578505063
+    second: spr_skeleton_axe_death1_strip45_14
+  - first:
+      213: -1407931262627178926
+    second: spr_skeleton_axe_death1_strip45_15
+  - first:
+      213: -8175188886456474108
+    second: spr_skeleton_axe_death1_strip45_16
+  - first:
+      213: -7697766471107913999
+    second: spr_skeleton_axe_death1_strip45_17
+  - first:
+      213: -2095392695615508405
+    second: spr_skeleton_axe_death1_strip45_18
+  - first:
+      213: -6764688140578330761
+    second: spr_skeleton_axe_death1_strip45_19
+  - first:
+      213: -1668200172466706228
+    second: spr_skeleton_axe_death1_strip45_20
+  - first:
+      213: -4258241170930438477
+    second: spr_skeleton_axe_death1_strip45_21
+  - first:
+      213: 7110785319529836998
+    second: spr_skeleton_axe_death1_strip45_22
+  - first:
+      213: 6160301244909517042
+    second: spr_skeleton_axe_death1_strip45_23
+  - first:
+      213: 8848217843337609632
+    second: spr_skeleton_axe_death1_strip45_24
+  - first:
+      213: 8859243561370018707
+    second: spr_skeleton_axe_death1_strip45_25
+  - first:
+      213: 401415906101371182
+    second: spr_skeleton_axe_death1_strip45_26
+  - first:
+      213: 2005300847642275766
+    second: spr_skeleton_axe_death1_strip45_27
+  - first:
+      213: 122548425135192655
+    second: spr_skeleton_axe_death1_strip45_28
+  - first:
+      213: -6542514064775516427
+    second: spr_skeleton_axe_death1_strip45_29
+  - first:
+      213: -7375721554267201001
+    second: spr_skeleton_axe_death1_strip45_30
+  - first:
+      213: -8851112582407790944
+    second: spr_skeleton_axe_death1_strip45_31
+  - first:
+      213: -3272803010035539248
+    second: spr_skeleton_axe_death1_strip45_32
+  - first:
+      213: 967453755403089387
+    second: spr_skeleton_axe_death1_strip45_33
+  - first:
+      213: 4449395965632491751
+    second: spr_skeleton_axe_death1_strip45_34
+  - first:
+      213: -1796856990529009422
+    second: spr_skeleton_axe_death1_strip45_35
+  - first:
+      213: -4075741132896437350
+    second: spr_skeleton_axe_death1_strip45_36
+  - first:
+      213: 8625028661313369646
+    second: spr_skeleton_axe_death1_strip45_37
+  - first:
+      213: -2322535336383990886
+    second: spr_skeleton_axe_death1_strip45_38
+  - first:
+      213: -1781283790692878756
+    second: spr_skeleton_axe_death1_strip45_39
+  - first:
+      213: 7637628711418488616
+    second: spr_skeleton_axe_death1_strip45_40
+  - first:
+      213: -3734180831456425604
+    second: spr_skeleton_axe_death1_strip45_41
+  - first:
+      213: -5203536486273617435
+    second: spr_skeleton_axe_death1_strip45_42
+  - first:
+      213: -414353180683731546
+    second: spr_skeleton_axe_death1_strip45_43
+  - first:
+      213: -5892009900914913302
+    second: spr_skeleton_axe_death1_strip45_44
+  - first:
+      213: 7839394369709464918
+    second: spr_skeleton_axe_death1_strip45_45
+  - first:
+      213: 998483119801608835
+    second: spr_skeleton_axe_death1_strip45_46
+  - first:
+      213: 5863463701246905365
+    second: spr_skeleton_axe_death1_strip45_47
+  - first:
+      213: -6523967209558585438
+    second: spr_skeleton_axe_death1_strip45_48
+  - first:
+      213: -1627149329800585117
+    second: spr_skeleton_axe_death1_strip45_49
+  - first:
+      213: 1003293033673337784
+    second: spr_skeleton_axe_death1_strip45_50
+  - first:
+      213: -7204309751873882667
+    second: spr_skeleton_axe_death1_strip45_51
+  - first:
+      213: -7582518887564951308
+    second: spr_skeleton_axe_death1_strip45_52
+  - first:
+      213: 4381342990956942274
+    second: spr_skeleton_axe_death1_strip45_53
+  - first:
+      213: 6858261889089520688
+    second: spr_skeleton_axe_death1_strip45_54
+  - first:
+      213: -4371089522287526505
+    second: spr_skeleton_axe_death1_strip45_55
+  - first:
+      213: 86397327847641
+    second: spr_skeleton_axe_death1_strip45_56
+  - first:
+      213: 128706496315000830
+    second: spr_skeleton_axe_death1_strip45_57
+  - first:
+      213: 5512274769231988270
+    second: spr_skeleton_axe_death1_strip45_58
+  - first:
+      213: 2026628535907768956
+    second: spr_skeleton_axe_death1_strip45_59
+  - first:
+      213: 8800328106138565599
+    second: spr_skeleton_axe_death1_strip45_60
+  - first:
+      213: -6366068202006325315
+    second: spr_skeleton_axe_death1_strip45_61
+  - first:
+      213: 3660348666581290229
+    second: spr_skeleton_axe_death1_strip45_62
+  - first:
+      213: 4276590702055572217
+    second: spr_skeleton_axe_death1_strip45_63
+  - first:
+      213: 182821444864634375
+    second: spr_skeleton_axe_death1_strip45_64
+  - first:
+      213: -2102668479279741825
+    second: spr_skeleton_axe_death1_strip45_65
+  - first:
+      213: -561213957058149947
+    second: spr_skeleton_axe_death1_strip45_66
+  - first:
+      213: -6508236090715624543
+    second: spr_skeleton_axe_death1_strip45_67
+  - first:
+      213: -7653615270585596005
+    second: spr_skeleton_axe_death1_strip45_68
+  - first:
+      213: 2838317395644791488
+    second: spr_skeleton_axe_death1_strip45_69
+  - first:
+      213: -5925344174914650258
+    second: spr_skeleton_axe_death1_strip45_70
+  - first:
+      213: 8144498747491451916
+    second: spr_skeleton_axe_death1_strip45_71
+  - first:
+      213: 1498519066276522217
+    second: spr_skeleton_axe_death1_strip45_72
+  - first:
+      213: -1181065730294836254
+    second: spr_skeleton_axe_death1_strip45_73
+  - first:
+      213: -9141444139368309935
+    second: spr_skeleton_axe_death1_strip45_74
+  - first:
+      213: 4372793417774104155
+    second: spr_skeleton_axe_death1_strip45_75
+  - first:
+      213: 2452791537396990563
+    second: spr_skeleton_axe_death1_strip45_76
+  - first:
+      213: 6603747076643556808
+    second: spr_skeleton_axe_death1_strip45_77
+  - first:
+      213: 3506115979671480254
+    second: spr_skeleton_axe_death1_strip45_78
+  - first:
+      213: 3962832479369258702
+    second: spr_skeleton_axe_death1_strip45_79
+  - first:
+      213: 3368858467961987827
+    second: spr_skeleton_axe_death1_strip45_80
+  - first:
+      213: -6595399290611088604
+    second: spr_skeleton_axe_death1_strip45_81
+  - first:
+      213: 8059161178732245024
+    second: spr_skeleton_axe_death1_strip45_82
+  - first:
+      213: 5433646346204410618
+    second: spr_skeleton_axe_death1_strip45_83
+  - first:
+      213: 5204630010591152637
+    second: spr_skeleton_axe_death1_strip45_84
+  - first:
+      213: -2947003649891506857
+    second: spr_skeleton_axe_death1_strip45_85
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daf42196051e31d00800000000000000
+      internalID: 942344482527006637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf51a861f6ad7fcc0800000000000000
+      internalID: -3677230400070347269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bb5120c0c759dd80800000000000000
+      internalID: -8225446759046751311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf6efaa2b99164410800000000000000
+      internalID: 1460883283355100923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0eb0f454ed8b71910800000000000000
+      internalID: 1808117040197602272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b0fe610210129e80800000000000000
+      internalID: -8173452704204525384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_6
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f45d826322927ce0800000000000000
+      internalID: -1408903052738603783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_7
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64f48f131e7218080800000000000000
+      internalID: -9187017916699619514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_8
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd60410ac23b55140800000000000000
+      internalID: 4707865989731321567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_9
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65e580324f8e5be90800000000000000
+      internalID: -7010441109674893738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_10
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3282d8201c6da2590800000000000000
+      internalID: -7698104488576604125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_11
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc72737cd1df9cb40800000000000000
+      internalID: 5461174327501596623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_12
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45c5b70c28d1cacf0800000000000000
+      internalID: -239784232745214892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_13
+      rect:
+        serializedVersion: 2
+        x: 3328
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3ea3140dffda4e10800000000000000
+      internalID: 2182803247202545213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_14
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 763a48104c7b36b00800000000000000
+      internalID: 820701609578505063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_15
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25690f6e9f5067ce0800000000000000
+      internalID: -1407931262627178926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_16
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4066a039505eb8e80800000000000000
+      internalID: -8175188886456474108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_17
+      rect:
+        serializedVersion: 2
+        x: 4352
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f653b5dd2a0c2590800000000000000
+      internalID: -7697766471107913999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_18
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b40b3e8f17babe2e0800000000000000
+      internalID: -2095392695615508405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_19
+      rect:
+        serializedVersion: 2
+        x: 4864
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 777e78c1afffe12a0800000000000000
+      internalID: -6764688140578330761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_20
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc860e918cc59d8e0800000000000000
+      internalID: -1668200172466706228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_21
+      rect:
+        serializedVersion: 2
+        x: 5376
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3be6fb65730b7e4c0800000000000000
+      internalID: -4258241170930438477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_22
+      rect:
+        serializedVersion: 2
+        x: 5632
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c173a4d2959ea260800000000000000
+      internalID: 7110785319529836998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_23
+      rect:
+        serializedVersion: 2
+        x: 5888
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f87a34f759cd7550800000000000000
+      internalID: 6160301244909517042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_24
+      rect:
+        serializedVersion: 2
+        x: 6144
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a14967af3f2bca70800000000000000
+      internalID: 8848217843337609632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_25
+      rect:
+        serializedVersion: 2
+        x: 6400
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 393602ea41b52fa70800000000000000
+      internalID: 8859243561370018707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_26
+      rect:
+        serializedVersion: 2
+        x: 6656
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e212d5ac3ad129500800000000000000
+      internalID: 401415906101371182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_27
+      rect:
+        serializedVersion: 2
+        x: 6912
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bfe1831f7244db10800000000000000
+      internalID: 2005300847642275766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_28
+      rect:
+        serializedVersion: 2
+        x: 7168
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4a77f3b42163b100800000000000000
+      internalID: 122548425135192655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_29
+      rect:
+        serializedVersion: 2
+        x: 7424
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5feee0f2f125435a0800000000000000
+      internalID: -6542514064775516427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_30
+      rect:
+        serializedVersion: 2
+        x: 7680
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71226bb135c24a990800000000000000
+      internalID: -7375721554267201001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_31
+      rect:
+        serializedVersion: 2
+        x: 7936
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0aed79260088a2580800000000000000
+      internalID: -8851112582407790944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_32
+      rect:
+        serializedVersion: 2
+        x: 8192
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d2a00f900ba492d0800000000000000
+      internalID: -3272803010035539248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_33
+      rect:
+        serializedVersion: 2
+        x: 8448
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be53b6390161d6d00800000000000000
+      internalID: 967453755403089387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_34
+      rect:
+        serializedVersion: 2
+        x: 8704
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e0b49c8e0e6fbd30800000000000000
+      internalID: 4449395965632491751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_35
+      rect:
+        serializedVersion: 2
+        x: 8960
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f8475756184017e0800000000000000
+      internalID: -1796856990529009422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_36
+      rect:
+        serializedVersion: 2
+        x: 9216
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9b7249a80f0077c0800000000000000
+      internalID: -4075741132896437350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_37
+      rect:
+        serializedVersion: 2
+        x: 9472
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e26752fbed142b770800000000000000
+      internalID: 8625028661313369646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_38
+      rect:
+        serializedVersion: 2
+        x: 9728
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a933a88ba62b4cfd0800000000000000
+      internalID: -2322535336383990886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_39
+      rect:
+        serializedVersion: 2
+        x: 9984
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c56f69b74db9747e0800000000000000
+      internalID: -1781283790692878756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_40
+      rect:
+        serializedVersion: 2
+        x: 10240
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8276c6ed8de4ef960800000000000000
+      internalID: 7637628711418488616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_41
+      rect:
+        serializedVersion: 2
+        x: 10496
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7987fd71568d2cc0800000000000000
+      internalID: -3734180831456425604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_42
+      rect:
+        serializedVersion: 2
+        x: 10752
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e170ef922359c7b0800000000000000
+      internalID: -5203536486273617435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_43
+      rect:
+        serializedVersion: 2
+        x: 11008
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6adfacd3afbef3af0800000000000000
+      internalID: -414353180683731546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_skeleton_axe_death1_strip45_44
+      rect:
+        serializedVersion: 2
+        x: 11264
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aefc1ea56306b3ea0800000000000000
+      internalID: -5892009900914913302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 93b0a4826105453409e4c709cdcb954c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":256.0,"y":256.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      spr_skeleton_axe_death1_strip45_0: 942344482527006637
+      spr_skeleton_axe_death1_strip45_1: -3677230400070347269
+      spr_skeleton_axe_death1_strip45_10: -7698104488576604125
+      spr_skeleton_axe_death1_strip45_11: 5461174327501596623
+      spr_skeleton_axe_death1_strip45_12: -239784232745214892
+      spr_skeleton_axe_death1_strip45_13: 2182803247202545213
+      spr_skeleton_axe_death1_strip45_14: 820701609578505063
+      spr_skeleton_axe_death1_strip45_15: -1407931262627178926
+      spr_skeleton_axe_death1_strip45_16: -8175188886456474108
+      spr_skeleton_axe_death1_strip45_17: -7697766471107913999
+      spr_skeleton_axe_death1_strip45_18: -2095392695615508405
+      spr_skeleton_axe_death1_strip45_19: -6764688140578330761
+      spr_skeleton_axe_death1_strip45_2: -8225446759046751311
+      spr_skeleton_axe_death1_strip45_20: -1668200172466706228
+      spr_skeleton_axe_death1_strip45_21: -4258241170930438477
+      spr_skeleton_axe_death1_strip45_22: 7110785319529836998
+      spr_skeleton_axe_death1_strip45_23: 6160301244909517042
+      spr_skeleton_axe_death1_strip45_24: 8848217843337609632
+      spr_skeleton_axe_death1_strip45_25: 8859243561370018707
+      spr_skeleton_axe_death1_strip45_26: 401415906101371182
+      spr_skeleton_axe_death1_strip45_27: 2005300847642275766
+      spr_skeleton_axe_death1_strip45_28: 122548425135192655
+      spr_skeleton_axe_death1_strip45_29: -6542514064775516427
+      spr_skeleton_axe_death1_strip45_3: 1460883283355100923
+      spr_skeleton_axe_death1_strip45_30: -7375721554267201001
+      spr_skeleton_axe_death1_strip45_31: -8851112582407790944
+      spr_skeleton_axe_death1_strip45_32: -3272803010035539248
+      spr_skeleton_axe_death1_strip45_33: 967453755403089387
+      spr_skeleton_axe_death1_strip45_34: 4449395965632491751
+      spr_skeleton_axe_death1_strip45_35: -1796856990529009422
+      spr_skeleton_axe_death1_strip45_36: -4075741132896437350
+      spr_skeleton_axe_death1_strip45_37: 8625028661313369646
+      spr_skeleton_axe_death1_strip45_38: -2322535336383990886
+      spr_skeleton_axe_death1_strip45_39: -1781283790692878756
+      spr_skeleton_axe_death1_strip45_4: 1808117040197602272
+      spr_skeleton_axe_death1_strip45_40: 7637628711418488616
+      spr_skeleton_axe_death1_strip45_41: -3734180831456425604
+      spr_skeleton_axe_death1_strip45_42: -5203536486273617435
+      spr_skeleton_axe_death1_strip45_43: -414353180683731546
+      spr_skeleton_axe_death1_strip45_44: -5892009900914913302
+      spr_skeleton_axe_death1_strip45_5: -8173452704204525384
+      spr_skeleton_axe_death1_strip45_6: -1408903052738603783
+      spr_skeleton_axe_death1_strip45_7: -9187017916699619514
+      spr_skeleton_axe_death1_strip45_8: 4707865989731321567
+      spr_skeleton_axe_death1_strip45_9: -7010441109674893738
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
