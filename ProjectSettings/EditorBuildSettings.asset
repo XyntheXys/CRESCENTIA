@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Map1_with_boss.unity
     guid: 76c9a81293419034eb1709309f335534
+  - enabled: 1
+    path: Assets/Scenes/Map1.unity
+    guid: 3a76edac669e697419054e8f1ea66c38
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
