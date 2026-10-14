@@ -8,14 +8,41 @@ public class UpdateHpUI : MonoBehaviour
     [SerializeField] private Slider realHpBar;
     [SerializeField] private Slider rallyHpBar;
 
+    private bool isSubscribed = false;
+
     void Start()
     {
         if (player == null) return;
-        UpdateBars(player.RealHp, player.RallyHp, player.MaxHp);
+        TrySubscribe();
     }
 
-    private void OnEnable() { if (player) player.OnHealthChanged += UpdateBars; }
-    private void OnDisable() { if (player) player.OnHealthChanged -= UpdateBars; }
+    private void OnEnable() { TrySubscribe(); }
+    private void OnDisable() { Unsubscribe(); }
+
+    private void TrySubscribe()
+    {
+        if (isSubscribed) return;
+
+        var player = PlayerController.Instance;
+        if (player != null)
+        {
+            player.OnHealthChanged += UpdateBars;
+            isSubscribed = true;
+
+            UpdateBars(player.RealHp, player.RallyHp, player.MaxHp);
+        }
+    }
+
+    private void Unsubscribe()
+    {
+        if (!isSubscribed) return;
+
+        if (PlayerController.Instance != null)
+        {
+            PlayerController.Instance.OnHealthChanged -= UpdateBars;
+        }
+        isSubscribed = false;
+    }
 
     void UpdateBars(float currentHealth, float currentRallyHealth, float maxHealth)
     {
