@@ -15,8 +15,8 @@ public class PlayerController : MonoBehaviour
     public event Action<float, float, float> OnHealthChanged;
 
     [Header("Horizontal Movement Settings")]
-    [SerializeField] private float walkSpeed = 5;
-    [SerializeField] private float jumpForce = 15;
+    [SerializeField] private float walkSpeed = 5f;
+    [SerializeField] private float jumpForce = 15f;
     private int jumpBufferCounter;
     [SerializeField] private int jumpBufferFrames;
     private float coyoteTimeCounter;
@@ -39,6 +39,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Vector2 sideAtkRange, upAtkRange, downAtkRange;
     [SerializeField] private LayerMask atkLayer;
     [SerializeField] private GameObject slashEffect;
+
+    [Header("Dash Settings")]
+    [Tooltip("X: dashSpeed, Y: dashDuration, Z: dashCooldown")]
+    [SerializeField] private Vector3 dashSettings = new Vector3(20f, 0.2f, 0.1f); // X: dashSpeed, Y: dashDuration, Z: dashCooldown
+    private bool dashInput;
 
     // Properties: PascalCase
     private Vector3 SideAtkCenter => transform.position + new Vector3(transform.localScale.x * atkOffset.x, -0.5f, 0);
@@ -88,16 +93,20 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        //if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             isSettingsPageActive = !isSettingsPageActive;
             settingsPage.SetActive(isSettingsPageActive);
         }
+        if (isSettingsPageActive) return; // Prevent player actions when settings page is active
 
         GetInputs();
         UpdateJumpVariables();
+        if (pState.dashing) return; // Prevent other actions while dashing
         Flip();
-        Move();
+        Dash();
+        Walk();
         Jump();
         Attack();
     }
@@ -106,7 +115,9 @@ public class PlayerController : MonoBehaviour
     {
         xAxis = Input.GetAxisRaw("Horizontal");
         yAxis = Input.GetAxisRaw("Vertical");
-        atkInput = Input.GetButtonDown("Fire1");
+        //atkInput = Input.GetButtonDown("Fire1");
+        atkInput = Input.GetKeyDown(KeyCode.J);
+        dashInput = Input.GetKeyDown(KeyCode.K);
     }
 
     void Flip()
@@ -121,8 +132,31 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Move()
+    private void Dash()
     {
+        if (dashInput && !pState.dashing) 
+        {
+            Debug.Log($"Dashing! {DateTime.Now}");
+            pState.dashing = true;
+            anim.SetTrigger("Dashing"); 
+            StartCoroutine(DashCoroutine());
+        }
+    }
+
+    IEnumerator DashCoroutine()
+    {
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f; // Disable gravity during dash
+        rb.linearVelocity = new Vector2(transform.localScale.x * dashSettings.x, 0);
+        yield return new WaitForSeconds(dashSettings.y);
+        rb.gravityScale = originalGravity; // Restore original gravity
+        pState.dashing = false;
+        yield return new WaitForSeconds(dashSettings.z); // Cooldown before next dash
+    }
+
+    private void Walk()
+    {
+        if (pState.dashing) return; // Prevent walking while dashing
         rb.linearVelocity = new Vector2(xAxis * walkSpeed, rb.linearVelocity.y);
         anim.SetBool("Walking", rb.linearVelocity.x != 0 && Grounded());
     }

@@ -81,7 +81,7 @@ public class TeleportList : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log($"Loaded Scene: {scene.name} (Mode: {mode})");
+        //Debug.Log($"Loaded Scene: {scene.name} (Mode: {mode})");
         fadeImg.gameObject.SetActive(false); 
         LoadTeleportPoints(); // Reload teleport points for the new scene
     }
