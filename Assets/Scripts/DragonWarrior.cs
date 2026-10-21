@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class DragonWarrior : Enemy
 {
     [SerializeField] private bool allowDmgFromHitbox = true;
+    [SerializeField] private float damageFromHitbox = 1f;
 
     [Header("Fireball Settings")]
     [SerializeField] private float fireballDuration = 3f;
@@ -28,6 +29,7 @@ public class DragonWarrior : Enemy
     {
         anim = GetComponent<Animator>();
         originalScale = transform.localScale;
+        //allowDmgFromHitbox = false;
     }
 
     private void Update()
@@ -106,6 +108,6 @@ public class DragonWarrior : Enemy
         if (!col.gameObject.CompareTag("Player")) return;
         if (!allowDmgFromHitbox) return;
         PlayerController p = PlayerController.Instance;
-        p.TakeDamage(1f);
+        p.TakeDamage(damageFromHitbox);
     }
 }

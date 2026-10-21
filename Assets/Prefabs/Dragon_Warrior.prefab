@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8199519544872283060}
   - component: {fileID: 1562700973208285385}
   - component: {fileID: 5408551265506900966}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fireball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &777689600299173411
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94,6 +94,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!95 &8199519544872283060
 Animator:
   serializedVersion: 7
@@ -188,7 +189,7 @@ GameObject:
   - component: {fileID: 474524317225194695}
   - component: {fileID: 3090773688316347890}
   - component: {fileID: 1535468017454080580}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Dragon_Warrior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,7 +214,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6280557299790600540
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -270,6 +271,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!95 &474524317225194695
 Animator:
   serializedVersion: 7
@@ -353,6 +355,7 @@ MonoBehaviour:
   health: 10
   isImmortal: 0
   allowDmgFromHitbox: 1
+  damageFromHitbox: 9
   fireballDuration: 2
   fireballSpeed: 0.015
   fireball: {fileID: 6857844236352699709}

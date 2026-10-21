@@ -1,18 +1,21 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class TeleportList : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
     [SerializeField] private TMPro.TMP_Dropdown dropdown;
     [SerializeField] private GameObject teleportParent;
+    [SerializeField] private GameObject deathScene;
     public Image fadeImg;
 
     private List<Transform> tpList = new List<Transform>();
     private Transform selectedPoint = null;
 
-    public static TeleportList Instance { get; private set; }
+    public static UIManager Instance { get; private set; }
 
     private void Awake()
     {
@@ -35,6 +38,7 @@ public class TeleportList : MonoBehaviour
     {
         //Debug.Log("Dropdown options count: " + dropdown.options.Count);
         LoadTeleportPoints();
+        if (deathScene!=null) deathScene.SetActive(false);
     }
 
     void LoadTeleportPoints()
@@ -84,5 +88,32 @@ public class TeleportList : MonoBehaviour
         //Debug.Log($"Loaded Scene: {scene.name} (Mode: {mode})");
         fadeImg.gameObject.SetActive(false); 
         LoadTeleportPoints(); // Reload teleport points for the new scene
+    }
+
+    public void ShowDeathScene()
+    {
+        deathScene.SetActive(true);
+        StartCoroutine(DeathSceneCoroutine(deathScene.GetComponent<CanvasGroup>()));
+    }
+
+    private IEnumerator DeathSceneCoroutine(CanvasGroup cg)
+    {
+        cg.alpha = 0f;
+        while (cg.alpha < 1f)
+        {
+            cg.alpha += Time.deltaTime * 1.5f; // Adjust the speed of the fade-in effect as needed
+            yield return null;
+        }
+    }
+
+    public void RespawnPlayer()
+    {
+        PlayerController p = PlayerController.Instance;
+        if (p != null) Debug.Log($"Respawning player at: {p.GetRespawnPoint()} at {DateTime.Now}");
+        if (p!=null & p.GetRespawnPoint() != null)
+        {
+            p.ResetPlayer();
+            deathScene.SetActive(false);
+        }
     }
 }

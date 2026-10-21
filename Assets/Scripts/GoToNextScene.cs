@@ -16,7 +16,7 @@ public class GoToNextScene : MonoBehaviour
 
     IEnumerator FadeOut()
     {
-        Image fadeImg = TeleportList.Instance.fadeImg;
+        Image fadeImg = UIManager.Instance.fadeImg;
         fadeImg.gameObject.SetActive(true);
         Color color = fadeImg.color;
         float t = 0f;

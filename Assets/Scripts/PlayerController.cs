@@ -6,10 +6,9 @@ using static UnityEngine.UI.Image;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Player State")]
-    [SerializeField] private float realHp = 10f;
-    [SerializeField] private float rallyHp = 10f;
-    [SerializeField] private float maxHp = 10f;
+    [Header("Player Health")]
+    [Tooltip("X: realHp, Y: rallyHp, Z: maxHp")]
+    [SerializeField] private Vector3 hp_rally_max = new(10f, 10f, 10f); // X: realHp, Y: rallyHp, Z: maxHp
 
     // Event signature: passes (currentHealth, currentRallyHealth, maxHealth)
     public event Action<float, float, float> OnHealthChanged;
@@ -33,8 +32,8 @@ public class PlayerController : MonoBehaviour
     [Header("Attack Settings")]
     [SerializeField] private float atkDamage = 1f;
     [SerializeField] private float atkDuration = 1f;
-    private bool atkInput;
     private float timeSinceLastAtk = 0f;
+    private float chargeTime = 0f;
     [SerializeField] [Tooltip("X:\tSide Attack Offset\nY:\tUp Attack Offset\nZ:\tDown Attack Offset")] private Vector3 atkOffset;
     [SerializeField] private Vector2 sideAtkRange, upAtkRange, downAtkRange;
     [SerializeField] private LayerMask atkLayer;
@@ -43,7 +42,6 @@ public class PlayerController : MonoBehaviour
     [Header("Dash Settings")]
     [Tooltip("X: dashSpeed, Y: dashDuration, Z: dashCooldown")]
     [SerializeField] private Vector3 dashSettings = new Vector3(20f, 0.2f, 0.1f); // X: dashSpeed, Y: dashDuration, Z: dashCooldown
-    private bool dashInput;
 
     // Properties: PascalCase
     private Vector3 SideAtkCenter => transform.position + new Vector3(transform.localScale.x * atkOffset.x, -0.5f, 0);
@@ -63,10 +61,18 @@ public class PlayerController : MonoBehaviour
 
     private PlayerStateList pState;
     private Rigidbody2D rb;
-    private float xAxis, yAxis;
     private Animator anim;
 
+    // Input variables
+    private float xAxis, yAxis;
+    private bool atkChargeInput, atkReleaseInput;
+    private bool dashInput;
+    private bool interactInput;
+
     public static PlayerController Instance;
+    private IInteractable interactable;
+    private Vector3 respawnPoint;
+
 
     private void Awake()
     {
@@ -98,17 +104,19 @@ public class PlayerController : MonoBehaviour
         {
             isSettingsPageActive = !isSettingsPageActive;
             settingsPage.SetActive(isSettingsPageActive);
+            rb.linearVelocity = Vector2.zero; // Stop player movement when settings page is active
         }
         if (isSettingsPageActive) return; // Prevent player actions when settings page is active
 
         GetInputs();
         UpdateJumpVariables();
-        if (pState.dashing) return; // Prevent other actions while dashing
+        if (pState.dashing || !pState.alive) return; // Prevent other actions while dashing or if not alive
         Flip();
         Dash();
         Walk();
         Jump();
         Attack();
+        Interact();
     }
 
     void GetInputs() 
@@ -116,8 +124,10 @@ public class PlayerController : MonoBehaviour
         xAxis = Input.GetAxisRaw("Horizontal");
         yAxis = Input.GetAxisRaw("Vertical");
         //atkInput = Input.GetButtonDown("Fire1");
-        atkInput = Input.GetKeyDown(KeyCode.J);
+        atkChargeInput = Input.GetKey(KeyCode.J);
+        atkReleaseInput = Input.GetKeyUp(KeyCode.J);
         dashInput = Input.GetKeyDown(KeyCode.K);
+        interactInput = Input.GetKeyDown(KeyCode.F);
     }
 
     void Flip()
@@ -170,9 +180,15 @@ public class PlayerController : MonoBehaviour
 
     void Attack()
     {
-        timeSinceLastAtk += Time.deltaTime;
         if (settingsPage.activeSelf) return; // Prevent attacking when settings page is active
-        if (atkInput && timeSinceLastAtk >= atkDuration)
+        timeSinceLastAtk += Time.deltaTime;
+        if (timeSinceLastAtk < atkDuration) return; // Prevent attacking if still in attack duration
+        if (atkChargeInput)
+        {
+            chargeTime += Time.deltaTime; // Start charging attack
+            Debug.Log($"Charging attack for {chargeTime} seconds! {DateTime.Now}");
+        }
+        if (atkReleaseInput)
         {
             pState.attacking = true;
             timeSinceLastAtk = 0f;
@@ -196,6 +212,7 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(ShowSlashEffect(DownAtkCenter, -90));
                 //DisplayAttackDebug(2);
             }
+            chargeTime = 0f; // Reset charge time after attack
         }
         else
         {
@@ -205,15 +222,16 @@ public class PlayerController : MonoBehaviour
 
     void Hit(Vector3 atkCenter, Vector3 atkRange)
     {
+        Debug.Log($"Attack with {atkDamage + chargeTime} damage! {DateTime.Now}");
         Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(atkCenter, atkRange, 0, atkLayer);
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<Enemy>()?.TakeDamage(atkDamage); // Adjust damage value as needed
-            float previousHp = realHp;
-            realHp = Mathf.Min(Mathf.Min(previousHp + hpRegainStep, rallyHp), maxHp); // Regain HP when hitting an enemy
-            if (Mathf.Abs(rallyHp-realHp) < 0.0001f && rallyCoroutine != null) StopRallyCoroutine(); // Stop rally countdown if realHp reaches rallyHp
+            enemy.GetComponent<Enemy>()?.TakeDamage(atkDamage + chargeTime); // Adjust damage value as needed
+            float previousHp = hp_rally_max.x;
+            hp_rally_max.x = Mathf.Min(Mathf.Min(previousHp + hpRegainStep, hp_rally_max.y), hp_rally_max.z); // Regain HP when hitting an enemy
+            if (Mathf.Abs(hp_rally_max.y-hp_rally_max.x) < 0.0001f && rallyCoroutine != null) StopRallyCoroutine(); // Stop rally countdown if realHp reaches rallyHp
             NotifyHealthChanged();
-            Debug.Log($"Hit {enemy.name}! Regain {previousHp + hpRegainStep}, Rally {rallyHp}, Real {realHp}");
+            Debug.Log($"Hit {enemy.name}! Regain {previousHp + hpRegainStep}, Rally {hp_rally_max.y}, Real {hp_rally_max.x}");
         }
     }
 
@@ -228,24 +246,34 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        if (!pState.alive) return;
         // Implement damage logic here (e.g., reduce health, play hit animation, etc.)
-        realHp -= damage;
-        Debug.Log($"Player took {damage} damage! Remain: {realHp} at {DateTime.Now.ToString()}");
+        hp_rally_max.x -= damage;
+        Debug.Log($"Player took {damage} damage! Remain: {hp_rally_max.x} at {DateTime.Now}");
         if (rallyCoroutine != null) StopRallyCoroutine();
         else rallyCoroutine = StartCoroutine(RallyHpCountdown());
         NotifyHealthChanged();
+        if (hp_rally_max.x <= 0)
+        {
+            hp_rally_max.x = 0;
+            pState.alive = false;
+            anim.SetTrigger("Dead");
+            Debug.Log($"Player is dead at {DateTime.Now}");
+            UIManager.Instance.ShowDeathScene();
+            rb.linearVelocity = Vector2.zero; // Stop player movement when dead
+        }
     }
 
     IEnumerator RallyHpCountdown()
     {
         yield return new WaitForSeconds(rallySettings.x);
-        while (rallyHp >= realHp)
+        while (hp_rally_max.y >= hp_rally_max.x)
         {
-            rallyHp -= rallySettings.y;
+            hp_rally_max.y -= rallySettings.y;
             NotifyHealthChanged();
             yield return new WaitForSeconds(rallySettings.z);
         }
-        rallyHp = realHp; // Ensure rallyHp doesn't go below realHp
+        hp_rally_max.y = hp_rally_max.x; // Ensure rallyHp doesn't go below realHp
         rallyCoroutine = null; // Reset the coroutine reference
         NotifyHealthChanged();
     }
@@ -253,12 +281,11 @@ public class PlayerController : MonoBehaviour
     private void StopRallyCoroutine()
     {
         StopCoroutine(rallyCoroutine);
-        rallyHp = realHp; // Reset rallyHp to realHp when taking damage
+        hp_rally_max.y = hp_rally_max.x; // Reset rallyHp to realHp when taking damage
         rallyCoroutine = null;
     }
 
-    private void NotifyHealthChanged() => OnHealthChanged?.Invoke(realHp, rallyHp, maxHp);
-
+    private void NotifyHealthChanged() => OnHealthChanged?.Invoke(hp_rally_max.x, hp_rally_max.y, hp_rally_max.z);
     void Jump()
     {
         if(Input.GetButtonUp("Jump") && rb.linearVelocity.y > 0)
@@ -308,6 +335,32 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
+    void Interact()
+    {
+        if (!interactInput) return;
+        MonoBehaviour mb = interactable as MonoBehaviour;
+
+        // Log the interaction attempt with the target's name and whether it's interactable
+        string targetName = (mb != null) ? mb.gameObject.name : "null";
+        string extraInfo = (mb != null) ? $" (interactable {interactable})" : "";
+        Debug.Log($"Interacting with {targetName}{extraInfo} at {DateTime.Now}");
+
+        if (interactable == null || !interactable.IsInteractable) return;
+        interactable.Interact();
+    }
+
+    public void ResetPlayer()
+    {
+        hp_rally_max.x = hp_rally_max.z; // Reset real HP to max HP
+        hp_rally_max.y = hp_rally_max.z; // Reset rally HP to max HP
+        NotifyHealthChanged();
+        pState.alive = true;
+        anim.Play("Player_Idle"); // Reset animation to Idle
+        rb.linearVelocity = Vector2.zero; // Stop player movement when respawning
+        transform.position = respawnPoint; // Move player to respawn point
+    }
+
     private void OnDrawGizmosSelected()
     {
         // Do not draw while running in Play Mode (even if Game View Gizmos are turned on)
@@ -351,7 +404,25 @@ public class PlayerController : MonoBehaviour
     }
 
     // GETTERS & SETTERS
-    public float RealHp => realHp;
-    public float RallyHp => rallyHp;
-    public float MaxHp => maxHp;
+    public float RealHp => hp_rally_max.x;
+    public float RallyHp => hp_rally_max.y;
+    public float MaxHp => hp_rally_max.z;
+
+    public void SetInteractable(IInteractable interactable)
+    {
+        this.interactable = interactable;
+    }
+    public IInteractable GetInteractable()
+    {
+        return interactable;
+    }
+
+    public void SetRespawnPoint(Vector3 respawnPoint)
+    {
+        this.respawnPoint = respawnPoint;
+    }
+    public Vector3 GetRespawnPoint()
+    {
+        return respawnPoint;
+    }
 }
