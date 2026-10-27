@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.UI.Image;
@@ -25,8 +26,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Ground Check Settings")]
     [SerializeField] private Transform groundCheckPoint;
-    [SerializeField] private float groundCheckY = 0.2f;
-    [SerializeField] private float groundCheckX = 0.5f;
+    [SerializeField] private Vector2 groundCheckOffset = new(0.2f, 0.5f);
     [SerializeField] private LayerMask whatIsGround;
 
     [Header("Attack Settings")]
@@ -58,6 +58,7 @@ public class PlayerController : MonoBehaviour
     //[SerializeField] private bool debugMode = true;
     [SerializeField] private GameObject settingsPage;
     private bool isSettingsPageActive = false;
+    [SerializeField] private Vector3 latestGroundPos;
 
     private PlayerStateList pState;
     private Rigidbody2D rb;
@@ -173,9 +174,9 @@ public class PlayerController : MonoBehaviour
 
     public bool Grounded()
     {
-        return Physics2D.Raycast(groundCheckPoint.position, Vector2.down, groundCheckY, whatIsGround)
-            || Physics2D.Raycast(groundCheckPoint.position + new Vector3(groundCheckX, 0, 0), Vector2.down, groundCheckY, whatIsGround)
-            || Physics2D.Raycast(groundCheckPoint.position + new Vector3(-groundCheckX, 0, 0), Vector2.down, groundCheckY, whatIsGround);
+        return Physics2D.Raycast(groundCheckPoint.position, Vector2.down, groundCheckOffset.y, whatIsGround)
+            || Physics2D.Raycast(groundCheckPoint.position + new Vector3(groundCheckOffset.x, 0, 0), Vector2.down, groundCheckOffset.y, whatIsGround)
+            || Physics2D.Raycast(groundCheckPoint.position + new Vector3(-groundCheckOffset.x, 0, 0), Vector2.down, groundCheckOffset.y, whatIsGround);
     }
 
     void Attack()
@@ -319,20 +320,17 @@ public class PlayerController : MonoBehaviour
             pState.jumping = false;
             coyoteTimeCounter = coyoteTime;
             airJumpCounter = 0;
+            bool safeGround = Physics2D.Raycast(groundCheckPoint.position + new Vector3(groundCheckOffset.x + 0.5f, 0, 0), Vector2.down, groundCheckOffset.y, whatIsGround)
+                           && Physics2D.Raycast(groundCheckPoint.position + new Vector3(-groundCheckOffset.x - 0.5f, 0, 0), Vector2.down, groundCheckOffset.y, whatIsGround);
+            if (safeGround) latestGroundPos = transform.position; // Update latest ground position when grounded
         }
         else
         {
             coyoteTimeCounter -= Time.deltaTime;
         }
 
-        if (Input.GetButtonDown("Jump"))
-        {
-            jumpBufferCounter = jumpBufferFrames;
-        }
-        else
-        {
-            jumpBufferCounter--;
-        }
+        if (Input.GetButtonDown("Jump")) jumpBufferCounter = jumpBufferFrames;
+        else jumpBufferCounter--;
     }
 
 
@@ -401,6 +399,13 @@ public class PlayerController : MonoBehaviour
                 Debug.DrawLine(DownAtkCenter + Vector3.right * downAtkRange.x, DownAtkCenter - Vector3.up * downAtkRange.y, Color.red, atkDuration);
                 break;
         }
+    }
+
+    public void MoveBackToGround()
+    {
+        transform.position = latestGroundPos + Vector3.up * 0.15f;
+        rb.linearVelocity = Vector2.zero; // Stop player movement when moving back to latest ground
+        Debug.Log($"Moved back to latest ground position: {latestGroundPos} at {DateTime.Now}");
     }
 
     // GETTERS & SETTERS
