@@ -69,6 +69,7 @@ public class PlayerController : MonoBehaviour
     private bool atkChargeInput, atkReleaseInput;
     private bool dashInput;
     private bool interactInput;
+    private bool runInput;
 
     public static PlayerController Instance;
     private IInteractable interactable;
@@ -126,9 +127,10 @@ public class PlayerController : MonoBehaviour
         yAxis = Input.GetAxisRaw("Vertical");
         //atkInput = Input.GetButtonDown("Fire1");
         atkChargeInput = Input.GetKey(KeyCode.J);
-        atkReleaseInput = Input.GetKeyUp(KeyCode.J);
+        atkReleaseInput = Input.GetKeyUp(KeyCode.J) || Input.GetButtonDown("Fire1");
         dashInput = Input.GetKeyDown(KeyCode.K);
         interactInput = Input.GetKeyDown(KeyCode.F);
+        runInput = Input.GetKey(KeyCode.LeftShift);
     }
 
     void Flip()
@@ -168,7 +170,18 @@ public class PlayerController : MonoBehaviour
     private void Walk()
     {
         if (pState.dashing) return; // Prevent walking while dashing
-        rb.linearVelocity = new Vector2(xAxis * walkSpeed, rb.linearVelocity.y);
+
+        if (runInput)
+        {
+            float mul = 1.7f; // Adjust this multiplier to control running speed
+            rb.linearVelocity = new Vector2(xAxis * walkSpeed * mul, rb.linearVelocity.y); // Increase speed when running
+            anim.speed = mul; // Increase animation speed when running
+        }
+        else
+        {
+            rb.linearVelocity = new Vector2(xAxis * walkSpeed, rb.linearVelocity.y);
+            anim.speed = 1f; // Reset animation speed when not running
+        }
         anim.SetBool("Walking", rb.linearVelocity.x != 0 && Grounded());
     }
 

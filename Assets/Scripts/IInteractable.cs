@@ -18,7 +18,7 @@ public abstract class InteractableBase : MonoBehaviour, IInteractable
 
     public abstract void Interact();
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (!isInteractable || !collision.CompareTag("Player")) return;
         PlayerController p = PlayerController.Instance;
@@ -29,7 +29,7 @@ public abstract class InteractableBase : MonoBehaviour, IInteractable
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    protected virtual void OnTriggerExit2D(Collider2D collision)
     {
         if (!isInteractable || !collision.CompareTag("Player")) return;
         PlayerController p = PlayerController.Instance;

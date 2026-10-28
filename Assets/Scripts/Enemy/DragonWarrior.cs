@@ -21,20 +21,16 @@ public class DragonWarrior : Enemy
     [SerializeField] private Vector3 setting;
 
     private Animator anim;
-    Vector3 originalScale;
-    private bool isInAnimation = false;
-    int direction => transform.position.x > PlayerController.Instance.transform.position.x ? -1 : 1;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         anim = GetComponent<Animator>();
-        originalScale = transform.localScale;
-        //allowDmgFromHitbox = false;
     }
 
-    private void Update()
+    protected override void Update()
     {
-        if (!isInAnimation) transform.localScale = new Vector3(direction * Mathf.Abs(originalScale.x), originalScale.y, originalScale.z);
+        base.Update();
         if (Keyboard.current.digit1Key.wasPressedThisFrame) Fireball();
         if (Keyboard.current.digit2Key.wasPressedThisFrame) StartCoroutine(FlyingKick());
         if (Keyboard.current.digit3Key.wasPressedThisFrame) StartCoroutine(Strike());
