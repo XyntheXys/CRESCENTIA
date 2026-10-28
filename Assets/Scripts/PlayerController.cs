@@ -1,22 +1,22 @@
 using System;
 using System.Collections;
+using Unity.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.UI.Image;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Player State")]
-    [SerializeField] private float realHp = 10f;
-    [SerializeField] private float rallyHp = 10f;
-    [SerializeField] private float maxHp = 10f;
+    [Header("Player Health")]
+    [Tooltip("X: realHp, Y: rallyHp, Z: maxHp")]
+    [SerializeField] private Vector3 hp_rally_max = new(10f, 10f, 10f); // X: realHp, Y: rallyHp, Z: maxHp
 
     // Event signature: passes (currentHealth, currentRallyHealth, maxHealth)
     public event Action<float, float, float> OnHealthChanged;
 
     [Header("Horizontal Movement Settings")]
-    [SerializeField] private float walkSpeed = 5;
-    [SerializeField] private float jumpForce = 15;
+    [SerializeField] private float walkSpeed = 5f;
+    [SerializeField] private float jumpForce = 15f;
     private int jumpBufferCounter;
     [SerializeField] private int jumpBufferFrames;
     private float coyoteTimeCounter;
@@ -26,19 +26,22 @@ public class PlayerController : MonoBehaviour
 
     [Header("Ground Check Settings")]
     [SerializeField] private Transform groundCheckPoint;
-    [SerializeField] private float groundCheckY = 0.2f;
-    [SerializeField] private float groundCheckX = 0.5f;
+    [SerializeField] private Vector2 groundCheckOffset = new(0.2f, 0.5f);
     [SerializeField] private LayerMask whatIsGround;
 
     [Header("Attack Settings")]
     [SerializeField] private float atkDamage = 1f;
     [SerializeField] private float atkDuration = 1f;
-    private bool atkInput;
     private float timeSinceLastAtk = 0f;
+    private float chargeTime = 0f;
     [SerializeField] [Tooltip("X:\tSide Attack Offset\nY:\tUp Attack Offset\nZ:\tDown Attack Offset")] private Vector3 atkOffset;
     [SerializeField] private Vector2 sideAtkRange, upAtkRange, downAtkRange;
     [SerializeField] private LayerMask atkLayer;
     [SerializeField] private GameObject slashEffect;
+
+    [Header("Dash Settings")]
+    [Tooltip("X: dashSpeed, Y: dashDuration, Z: dashCooldown")]
+    [SerializeField] private Vector3 dashSettings = new Vector3(20f, 0.2f, 0.1f); // X: dashSpeed, Y: dashDuration, Z: dashCooldown
 
     // Properties: PascalCase
     private Vector3 SideAtkCenter => transform.position + new Vector3(transform.localScale.x * atkOffset.x, -0.5f, 0);
@@ -55,13 +58,23 @@ public class PlayerController : MonoBehaviour
     //[SerializeField] private bool debugMode = true;
     [SerializeField] private GameObject settingsPage;
     private bool isSettingsPageActive = false;
+    [SerializeField] private Vector3 latestGroundPos;
 
     private PlayerStateList pState;
     private Rigidbody2D rb;
-    private float xAxis, yAxis;
     private Animator anim;
 
+    // Input variables
+    private float xAxis, yAxis;
+    private bool atkChargeInput, atkReleaseInput;
+    private bool dashInput;
+    private bool interactInput;
+    private bool runInput;
+
     public static PlayerController Instance;
+    private IInteractable interactable;
+    private Vector3 respawnPoint;
+
 
     private void Awake()
     {
@@ -88,25 +101,36 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        //if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             isSettingsPageActive = !isSettingsPageActive;
             settingsPage.SetActive(isSettingsPageActive);
+            rb.linearVelocity = Vector2.zero; // Stop player movement when settings page is active
         }
+        if (isSettingsPageActive) return; // Prevent player actions when settings page is active
 
         GetInputs();
         UpdateJumpVariables();
+        if (pState.dashing || !pState.alive) return; // Prevent other actions while dashing or if not alive
         Flip();
-        Move();
+        Dash();
+        Walk();
         Jump();
         Attack();
+        Interact();
     }
 
     void GetInputs() 
     {
         xAxis = Input.GetAxisRaw("Horizontal");
         yAxis = Input.GetAxisRaw("Vertical");
-        atkInput = Input.GetButtonDown("Fire1");
+        //atkInput = Input.GetButtonDown("Fire1");
+        atkChargeInput = Input.GetKey(KeyCode.J);
+        atkReleaseInput = Input.GetKeyUp(KeyCode.J) || Input.GetButtonDown("Fire1");
+        dashInput = Input.GetKeyDown(KeyCode.K);
+        interactInput = Input.GetKeyDown(KeyCode.F);
+        runInput = Input.GetKey(KeyCode.LeftShift);
     }
 
     void Flip()
@@ -121,24 +145,64 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Move()
+    private void Dash()
     {
-        rb.linearVelocity = new Vector2(xAxis * walkSpeed, rb.linearVelocity.y);
+        if (dashInput && !pState.dashing) 
+        {
+            Debug.Log($"Dashing! {DateTime.Now}");
+            pState.dashing = true;
+            anim.SetTrigger("Dashing"); 
+            StartCoroutine(DashCoroutine());
+        }
+    }
+
+    IEnumerator DashCoroutine()
+    {
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f; // Disable gravity during dash
+        rb.linearVelocity = new Vector2(transform.localScale.x * dashSettings.x, 0);
+        yield return new WaitForSeconds(dashSettings.y);
+        rb.gravityScale = originalGravity; // Restore original gravity
+        pState.dashing = false;
+        yield return new WaitForSeconds(dashSettings.z); // Cooldown before next dash
+    }
+
+    private void Walk()
+    {
+        if (pState.dashing) return; // Prevent walking while dashing
+
+        if (runInput)
+        {
+            float mul = 1.7f; // Adjust this multiplier to control running speed
+            rb.linearVelocity = new Vector2(xAxis * walkSpeed * mul, rb.linearVelocity.y); // Increase speed when running
+            anim.speed = mul; // Increase animation speed when running
+        }
+        else
+        {
+            rb.linearVelocity = new Vector2(xAxis * walkSpeed, rb.linearVelocity.y);
+            anim.speed = 1f; // Reset animation speed when not running
+        }
         anim.SetBool("Walking", rb.linearVelocity.x != 0 && Grounded());
     }
 
     public bool Grounded()
     {
-        return Physics2D.Raycast(groundCheckPoint.position, Vector2.down, groundCheckY, whatIsGround)
-            || Physics2D.Raycast(groundCheckPoint.position + new Vector3(groundCheckX, 0, 0), Vector2.down, groundCheckY, whatIsGround)
-            || Physics2D.Raycast(groundCheckPoint.position + new Vector3(-groundCheckX, 0, 0), Vector2.down, groundCheckY, whatIsGround);
+        return Physics2D.Raycast(groundCheckPoint.position, Vector2.down, groundCheckOffset.y, whatIsGround)
+            || Physics2D.Raycast(groundCheckPoint.position + new Vector3(groundCheckOffset.x, 0, 0), Vector2.down, groundCheckOffset.y, whatIsGround)
+            || Physics2D.Raycast(groundCheckPoint.position + new Vector3(-groundCheckOffset.x, 0, 0), Vector2.down, groundCheckOffset.y, whatIsGround);
     }
 
     void Attack()
     {
-        timeSinceLastAtk += Time.deltaTime;
         if (settingsPage.activeSelf) return; // Prevent attacking when settings page is active
-        if (atkInput && timeSinceLastAtk >= atkDuration)
+        timeSinceLastAtk += Time.deltaTime;
+        if (timeSinceLastAtk < atkDuration) return; // Prevent attacking if still in attack duration
+        if (atkChargeInput)
+        {
+            chargeTime += Time.deltaTime; // Start charging attack
+            Debug.Log($"Charging attack for {chargeTime} seconds! {DateTime.Now}");
+        }
+        if (atkReleaseInput)
         {
             pState.attacking = true;
             timeSinceLastAtk = 0f;
@@ -162,6 +226,7 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(ShowSlashEffect(DownAtkCenter, -90));
                 //DisplayAttackDebug(2);
             }
+            chargeTime = 0f; // Reset charge time after attack
         }
         else
         {
@@ -171,15 +236,16 @@ public class PlayerController : MonoBehaviour
 
     void Hit(Vector3 atkCenter, Vector3 atkRange)
     {
+        Debug.Log($"Attack with {atkDamage + chargeTime} damage! {DateTime.Now}");
         Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(atkCenter, atkRange, 0, atkLayer);
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<Enemy>()?.TakeDamage(atkDamage); // Adjust damage value as needed
-            float previousHp = realHp;
-            realHp = Mathf.Min(Mathf.Min(previousHp + hpRegainStep, rallyHp), maxHp); // Regain HP when hitting an enemy
-            if (Mathf.Abs(rallyHp-realHp) < 0.0001f && rallyCoroutine != null) StopRallyCoroutine(); // Stop rally countdown if realHp reaches rallyHp
+            enemy.GetComponent<Enemy>()?.TakeDamage(atkDamage + chargeTime); // Adjust damage value as needed
+            float previousHp = hp_rally_max.x;
+            hp_rally_max.x = Mathf.Min(Mathf.Min(previousHp + hpRegainStep, hp_rally_max.y), hp_rally_max.z); // Regain HP when hitting an enemy
+            if (Mathf.Abs(hp_rally_max.y-hp_rally_max.x) < 0.0001f && rallyCoroutine != null) StopRallyCoroutine(); // Stop rally countdown if realHp reaches rallyHp
             NotifyHealthChanged();
-            Debug.Log($"Hit {enemy.name}! Regain {previousHp + hpRegainStep}, Rally {rallyHp}, Real {realHp}");
+            Debug.Log($"Hit {enemy.name}! Regain {previousHp + hpRegainStep}, Rally {hp_rally_max.y}, Real {hp_rally_max.x}");
         }
     }
 
@@ -194,24 +260,34 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        if (!pState.alive) return;
         // Implement damage logic here (e.g., reduce health, play hit animation, etc.)
-        realHp -= damage;
-        Debug.Log($"Player took {damage} damage! Remain: {realHp} at {DateTime.Now.ToString()}");
+        hp_rally_max.x -= damage;
+        Debug.Log($"Player took {damage} damage! Remain: {hp_rally_max.x} at {DateTime.Now}");
         if (rallyCoroutine != null) StopRallyCoroutine();
         else rallyCoroutine = StartCoroutine(RallyHpCountdown());
         NotifyHealthChanged();
+        if (hp_rally_max.x <= 0)
+        {
+            hp_rally_max.x = 0;
+            pState.alive = false;
+            anim.SetTrigger("Dead");
+            Debug.Log($"Player is dead at {DateTime.Now}");
+            UIManager.Instance.ShowDeathScene();
+            rb.linearVelocity = Vector2.zero; // Stop player movement when dead
+        }
     }
 
     IEnumerator RallyHpCountdown()
     {
         yield return new WaitForSeconds(rallySettings.x);
-        while (rallyHp >= realHp)
+        while (hp_rally_max.y >= hp_rally_max.x)
         {
-            rallyHp -= rallySettings.y;
+            hp_rally_max.y -= rallySettings.y;
             NotifyHealthChanged();
             yield return new WaitForSeconds(rallySettings.z);
         }
-        rallyHp = realHp; // Ensure rallyHp doesn't go below realHp
+        hp_rally_max.y = hp_rally_max.x; // Ensure rallyHp doesn't go below realHp
         rallyCoroutine = null; // Reset the coroutine reference
         NotifyHealthChanged();
     }
@@ -219,12 +295,11 @@ public class PlayerController : MonoBehaviour
     private void StopRallyCoroutine()
     {
         StopCoroutine(rallyCoroutine);
-        rallyHp = realHp; // Reset rallyHp to realHp when taking damage
+        hp_rally_max.y = hp_rally_max.x; // Reset rallyHp to realHp when taking damage
         rallyCoroutine = null;
     }
 
-    private void NotifyHealthChanged() => OnHealthChanged?.Invoke(realHp, rallyHp, maxHp);
-
+    private void NotifyHealthChanged() => OnHealthChanged?.Invoke(hp_rally_max.x, hp_rally_max.y, hp_rally_max.z);
     void Jump()
     {
         if(Input.GetButtonUp("Jump") && rb.linearVelocity.y > 0)
@@ -258,20 +333,43 @@ public class PlayerController : MonoBehaviour
             pState.jumping = false;
             coyoteTimeCounter = coyoteTime;
             airJumpCounter = 0;
+            bool safeGround = Physics2D.Raycast(groundCheckPoint.position + new Vector3(groundCheckOffset.x + 0.5f, 0, 0), Vector2.down, groundCheckOffset.y, whatIsGround)
+                           && Physics2D.Raycast(groundCheckPoint.position + new Vector3(-groundCheckOffset.x - 0.5f, 0, 0), Vector2.down, groundCheckOffset.y, whatIsGround);
+            if (safeGround) latestGroundPos = transform.position; // Update latest ground position when grounded
         }
         else
         {
             coyoteTimeCounter -= Time.deltaTime;
         }
 
-        if (Input.GetButtonDown("Jump"))
-        {
-            jumpBufferCounter = jumpBufferFrames;
-        }
-        else
-        {
-            jumpBufferCounter--;
-        }
+        if (Input.GetButtonDown("Jump")) jumpBufferCounter = jumpBufferFrames;
+        else jumpBufferCounter--;
+    }
+
+
+    void Interact()
+    {
+        if (!interactInput) return;
+        MonoBehaviour mb = interactable as MonoBehaviour;
+
+        // Log the interaction attempt with the target's name and whether it's interactable
+        string targetName = (mb != null) ? mb.gameObject.name : "null";
+        string extraInfo = (mb != null) ? $" (interactable {interactable})" : "";
+        Debug.Log($"Interacting with {targetName}{extraInfo} at {DateTime.Now}");
+
+        if (interactable == null || !interactable.IsInteractable) return;
+        interactable.Interact();
+    }
+
+    public void ResetPlayer()
+    {
+        hp_rally_max.x = hp_rally_max.z; // Reset real HP to max HP
+        hp_rally_max.y = hp_rally_max.z; // Reset rally HP to max HP
+        NotifyHealthChanged();
+        pState.alive = true;
+        anim.Play("Player_Idle"); // Reset animation to Idle
+        rb.linearVelocity = Vector2.zero; // Stop player movement when respawning
+        transform.position = respawnPoint; // Move player to respawn point
     }
 
     private void OnDrawGizmosSelected()
@@ -316,8 +414,33 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void MoveBackToGround()
+    {
+        transform.position = latestGroundPos + Vector3.up * 0.15f;
+        rb.linearVelocity = Vector2.zero; // Stop player movement when moving back to latest ground
+        Debug.Log($"Moved back to latest ground position: {latestGroundPos} at {DateTime.Now}");
+    }
+
     // GETTERS & SETTERS
-    public float RealHp => realHp;
-    public float RallyHp => rallyHp;
-    public float MaxHp => maxHp;
+    public float RealHp => hp_rally_max.x;
+    public float RallyHp => hp_rally_max.y;
+    public float MaxHp => hp_rally_max.z;
+
+    public void SetInteractable(IInteractable interactable)
+    {
+        this.interactable = interactable;
+    }
+    public IInteractable GetInteractable()
+    {
+        return interactable;
+    }
+
+    public void SetRespawnPoint(Vector3 respawnPoint)
+    {
+        this.respawnPoint = respawnPoint;
+    }
+    public Vector3 GetRespawnPoint()
+    {
+        return respawnPoint;
+    }
 }

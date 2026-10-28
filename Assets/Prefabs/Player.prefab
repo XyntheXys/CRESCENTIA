@@ -66,7 +66,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7727338468314380979
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -123,6 +123,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!95 &4898584817738170549
 Animator:
   serializedVersion: 7
@@ -186,7 +187,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5802469353942044144
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -243,6 +244,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!61 &5592496311909837294
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -328,9 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ce02fc6663dbfb48ac21c7b59669b6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  realHp: 10
-  rallyHp: 10
-  maxHp: 10
+  hp_rally_max: {x: 10, y: 10, z: 10}
   walkSpeed: 10
   jumpForce: 12
   jumpBufferFrames: 8
@@ -350,8 +350,9 @@ MonoBehaviour:
   downAtkRange: {x: 1.33, y: 1.38}
   atkLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   slashEffect: {fileID: 1928366037277969884}
+  dashSettings: {x: 20, y: 0.2, z: 0.1}
   rallySettings: {x: 3, y: 0.01, z: 0.1}
   hpRegainStep: 0.2
   settingsPage: {fileID: 0}
@@ -391,3 +392,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   jumping: 0
   attacking: 0
+  dashing: 0
+  alive: 1
